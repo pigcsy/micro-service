@@ -58,7 +58,6 @@
 		<module>micro-system-center</module>
 		<module>micro-common-parent</module>
 		<module>micro-tools-parent</module>
-
 	</modules>
 	<dependencyManagement>
 		<dependencies>
