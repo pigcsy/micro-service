@@ -1,7 +1,4 @@
 # 公共平台服务项目JAVA开发规范
-
-
- 
 ## 类
 ### 命名
 1. 对于api和service接口,controller层请求参数超过2个,要求封装成对象,并以XXRequest为结尾,响应参数为自定义复杂对象(如只需要返回一个list集合,是否可以直接List<E>响应,或者Map中put进一个list集合响应???)以XXResponse结尾。
