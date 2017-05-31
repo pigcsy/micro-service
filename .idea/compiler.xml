@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1500" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cache-support" />
+        <module name="common-support" />
+        <module name="config-server" />
+        <module name="core" />
+        <module name="monitor-server" />
+        <module name="mq-support" />
+        <module name="registry-server" />
+        <module name="sc-auth-api" />
+        <module name="sc-safty-api" />
+        <module name="sc-safty-service" />
+        <module name="sc-support-service" />
+        <module name="sc-system-api" />
+        <module name="sc-system-gateway" />
+        <module name="sc-system-service" />
+        <module name="storm-support" />
+        <module name="zipkin-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cache-support" target="1.8" />
+      <module name="cmy-common-parent" target="1.8" />
+      <module name="cmy-data-platform" target="1.8" />
+      <module name="cmy-service-platform" target="1.8" />
+      <module name="cmy-system-center" target="1.8" />
+      <module name="cmy-tools-parent" target="1.8" />
+      <module name="common-support" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="core" target="1.8" />
+      <module name="dp-api-parent" target="1.8" />
+      <module name="dp-basic-gateway" target="1.8" />
+      <module name="dp-car-api" target="1.8" />
+      <module name="dp-car-service" target="1.8" />
+      <module name="dp-common-api" target="1.8" />
+      <module name="dp-common-service" target="1.8" />
+      <module name="dp-data-base-api" target="1.8" />
+      <module name="dp-data-base-service" target="1.8" />
+      <module name="dp-risk-api" target="1.8" />
+      <module name="dp-risk-service" target="1.8" />
+      <module name="dp-spi-parent" target="1.8" />
+      <module name="micro-common-parent" target="1.8" />
+      <module name="micro-service" target="1.8" />
+      <module name="micro-system-center" target="1.8" />
+      <module name="micro-tools-parent" target="1.8" />
+      <module name="monitor-server" target="1.8" />
+      <module name="mq-support" target="1.8" />
+      <module name="registry-server" target="1.8" />
+      <module name="sc-api-parent" target="1.8" />
+      <module name="sc-auth-api" target="1.8" />
+      <module name="sc-safty-api" target="1.8" />
+      <module name="sc-safty-service" target="1.8" />
+      <module name="sc-spi-parent" target="1.8" />
+      <module name="sc-support-service" target="1.8" />
+      <module name="sc-system-api" target="1.8" />
+      <module name="sc-system-gateway" target="1.8" />
+      <module name="sc-system-service" target="1.8" />
+      <module name="sp-activity-api" target="1.8" />
+      <module name="sp-activity-service" target="1.8" />
+      <module name="sp-api-parent" target="1.8" />
+      <module name="sp-app-gateway" target="1.8" />
+      <module name="sp-chemayi-cbk-api" target="1.8" />
+      <module name="sp-chemayi-cbk-core" target="1.8" />
+      <module name="sp-chemayi-client" target="1.8" />
+      <module name="sp-chemayi-common-api" target="1.8" />
+      <module name="sp-chemayi-kam-activity-api" target="1.8" />
+      <module name="sp-chemayi-luntaibao-api" target="1.8" />
+      <module name="sp-chemayi-luntaibao-core" target="1.8" />
+      <module name="sp-chemayi-member-core" target="1.8" />
+      <module name="sp-chemayi-oil-api" target="1.8" />
+      <module name="sp-chemayi-oil-core" target="1.8" />
+      <module name="sp-chemayi-order-api" target="1.8" />
+      <module name="sp-chemayi-order-consumer" target="1.8" />
+      <module name="sp-chemayi-order-core" target="1.8" />
+      <module name="sp-chemayi-parent" target="1.8" />
+      <module name="sp-chemayi-peccancy-api" target="1.8" />
+      <module name="sp-chemayi-peccancy-core" target="1.8" />
+      <module name="sp-chemayi-php-sdk" target="1.8" />
+      <module name="sp-chemayi-promotion-api" target="1.8" />
+      <module name="sp-chemayi-reminder-api" target="1.8" />
+      <module name="sp-chemayi-reminder-core" target="1.8" />
+      <module name="sp-chemayi-supplier-api" target="1.8" />
+      <module name="sp-chemayi-supplier-core" target="1.8" />
+      <module name="sp-chemayi-utils" target="1.8" />
+      <module name="sp-java-proxy" target="1.8" />
+      <module name="sp-proxy-parent" target="1.8" />
+      <module name="sp-spi-parent" target="1.8" />
+      <module name="storm-support" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/cache-support/cache-support.iml" filepath="$PROJECT_DIR$/micro-tools-parent/cache-support/cache-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/common-support/common-support.iml" filepath="$PROJECT_DIR$/micro-tools-parent/common-support/common-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/config-server/config-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/core/core.iml" filepath="$PROJECT_DIR$/micro-tools-parent/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/micro-common-parent.iml" filepath="$PROJECT_DIR$/micro-common-parent/micro-common-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/micro-service.iml" filepath="$PROJECT_DIR$/.idea/micro-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/micro-system-center.iml" filepath="$PROJECT_DIR$/micro-system-center/micro-system-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/micro-tools-parent.iml" filepath="$PROJECT_DIR$/micro-tools-parent/micro-tools-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/monitor-server/monitor-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/monitor-server/monitor-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/mq-support/mq-support.iml" filepath="$PROJECT_DIR$/micro-tools-parent/mq-support/mq-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/registry-server/registry-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/registry-server/registry-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-api-parent.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-api-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-auth-api/sc-auth-api.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-auth-api/sc-auth-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-safty-api/sc-safty-api.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-safty-api/sc-safty-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-safty-service/sc-safty-service.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-safty-service/sc-safty-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-spi-parent.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-spi-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-support-service/sc-support-service.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-support-service/sc-support-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-system-api/sc-system-api.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-system-api/sc-system-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-system-gateway/sc-system-gateway.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-system-gateway/sc-system-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-system-service/sc-system-service.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-system-service/sc-system-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/storm-support/storm-support.iml" filepath="$PROJECT_DIR$/micro-tools-parent/storm-support/storm-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/zipkin-server/zipkin-server.iml" />
+    </modules>
+  </component>
+</project>

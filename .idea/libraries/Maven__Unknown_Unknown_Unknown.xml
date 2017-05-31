@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: Unknown:Unknown:Unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/Unknown/Unknown/Unknown/Unknown-Unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/micro-tools-parent/common-support/Unknown-Unknown-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/Unknown/Unknown/Unknown/Unknown-Unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/micro-tools-parent/common-support/Unknown-Unknown-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/Unknown/Unknown/Unknown/Unknown-Unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
