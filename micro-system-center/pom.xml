@@ -20,6 +20,7 @@
 	<modules>
 		<module>sc-system-gateway</module>
 		<module>sc-spi-parent</module>
+		<module>micro-mapper</module>
 		<module>sc-api-parent</module>
 	</modules>
 	<dependencies>

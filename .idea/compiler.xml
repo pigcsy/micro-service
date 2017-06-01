@@ -11,6 +11,7 @@
         <module name="common-support" />
         <module name="config-server" />
         <module name="core" />
+        <module name="micro-test-mapper" />
         <module name="monitor-server" />
         <module name="mq-support" />
         <module name="registry-server" />
@@ -47,8 +48,10 @@
       <module name="dp-risk-service" target="1.8" />
       <module name="dp-spi-parent" target="1.8" />
       <module name="micro-common-parent" target="1.8" />
+      <module name="micro-mapper" target="1.8" />
       <module name="micro-service" target="1.8" />
       <module name="micro-system-center" target="1.8" />
+      <module name="micro-test-mapper" target="1.8" />
       <module name="micro-tools-parent" target="1.8" />
       <module name="monitor-server" target="1.8" />
       <module name="mq-support" target="1.8" />
