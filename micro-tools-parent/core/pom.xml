@@ -16,7 +16,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
-			<groupId>com.cmy</groupId>
+			<groupId>com</groupId>
 			<artifactId>common-support</artifactId>
 			<version>1.0.0</version>
 		</dependency>
