@@ -302,8 +302,7 @@
 			<properties>
 				<spring.cloud.profile>develop</spring.cloud.profile>
 				<eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka</eureka.client.serviceUrl.defaultZone>
-				<jvm.arguments> -Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4
-					-XX:+UseSerialGC -server</jvm.arguments>
+				<!--<jvm.arguments> -Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4-XX:+UseSerialGC -server</jvm.arguments>-->
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -316,7 +315,9 @@
 				<eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka</eureka.client.serviceUrl.defaultZone>
 				<!-- -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MetaspaceSize=24m 
 					-XX:MaxMetaspaceSize=64m -XX:+UseSerialGC -server -->
+<!--
 				<jvm.arguments> -Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4</jvm.arguments>
+-->
 			</properties>
 			<activation>
 				<activeByDefault>false</activeByDefault>
