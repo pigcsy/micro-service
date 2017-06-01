@@ -31,7 +31,7 @@ public class ErrorHandelController implements ErrorController {
     @RequestMapping(value = "/error")
     public String handle(HttpServletRequest request) {
         logger.warn("异常处理：{}",getErrorAttributes(request));
-        return JSON.toJSONString(new DefaultResult("网关秀逗了！", CodeTemp.UNKNOW.getCode()));
+        return JSON.toJSONString(new DefaultResult("网管换机子！", CodeTemp.UNKNOW.getCode()));
     }
 
     private Map<String, Object> getErrorAttributes(HttpServletRequest request) {

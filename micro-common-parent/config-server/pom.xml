@@ -56,10 +56,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
-		 
-		 
 	</profiles>
-
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<resources>

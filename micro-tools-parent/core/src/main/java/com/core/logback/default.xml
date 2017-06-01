@@ -37,7 +37,7 @@
 	<logger name="org.apache.catalina" level="warn"/>
 	<logger name="org.I0Itec.zkclient" level="warn"/>
  
-	<appender name="loghub" class="com.cmy.com.core.support.aliyun.log.LoghubAppender">
+	<appender name="loghub" class="com.core.support.aliyun.log.LoghubAppender">
 	 
 	</appender>
 
