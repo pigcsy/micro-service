@@ -74,8 +74,7 @@ public class CustomOAuth2ClientAuthenticationProcessingFilter extends AbstractAu
 			if (e.getCause() != null && e.getCause() instanceof OAuth2Exception) {
 				OAuth2Exception fail = (OAuth2Exception) e.getCause();
 				if (fail != null && !fail.getAdditionalInformation().isEmpty()) {
-					exception = HttpErrorDecoder.decode(HttpStatus.INTERNAL_SERVER_ERROR,
-							JSON.toJSONString(fail.getAdditionalInformation()));
+					exception = HttpErrorDecoder.decode(HttpStatus.INTERNAL_SERVER_ERROR, JSON.toJSONString(fail.getAdditionalInformation()));
 				} else {
 					exception = new MicroAuthorizationException("认证失败");
 				}
