@@ -38,10 +38,8 @@
             <version>1.0.0</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>
-                        spring-boot-starter-data-jpa
-                    </artifactId>
-                    <groupId>org.springframework.boot</groupId>
+                    <groupId>org.mybatis.spring.boot</groupId>
+                    <artifactId>mybatis-spring-boot-starter</artifactId>
                 </exclusion>
                 <exclusion>
                     <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -118,4 +116,7 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 </project>

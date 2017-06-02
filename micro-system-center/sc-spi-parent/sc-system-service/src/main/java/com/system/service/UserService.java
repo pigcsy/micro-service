@@ -5,7 +5,6 @@ import com.core.exception.LogicException;
 import com.entity.UserBase;
 import com.mapper.ext.UserBaseMapperExt;
 import com.system.domain.DefaultRequestDto;
-import com.system.domain.entity.AdminStaffEntity;
 import com.system.domain.request.user.UserListRequestDto;
 import com.system.domain.request.user.UserRequestDto;
 import com.system.domain.response.user.UserListResponseDto;
@@ -98,7 +97,7 @@ public class UserService extends BaseService {
     }
 
 
-    public boolean checkUser(AdminStaffEntity adminStaffEntity) {
+    public boolean checkUser() {//AdminStaffEntity adminStaffEntity
         // AdminStaffEntity query = new AdminStaffEntity();
         // query.setCode(adminStaffEntity.getCode());
         // query.setStaffRoster(adminStaffEntity.getStaffRoster());

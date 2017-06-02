@@ -185,33 +185,6 @@
                 <artifactId>log-loghub-log4j-appender</artifactId>
                 <version>${log-loghub-log4j-appender.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.alibaba.jstorm</groupId>
-                <artifactId>jstorm-core</artifactId>
-                <version>${jstorm-core.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>log4j-over-slf4j</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>slf4j-log4j12</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>log4j</artifactId>
-                        <groupId>log4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>guava</artifactId>
-                        <groupId>com.google.guava</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
             <!-- kafka -->
             <dependency>
                 <groupId>org.apache.kafka</groupId>
@@ -234,17 +207,6 @@
                 <version>${storm-kafka.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.github.sgroschupf</groupId>
-                <artifactId>zkclient</artifactId>
-                <version>0.1</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
             <dependency>
                 <groupId>com.beust</groupId>
                 <artifactId>jcommander</artifactId>
@@ -279,17 +241,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.apache.thrift</groupId>
-                <artifactId>libthrift</artifactId>
-                <version>${libthrift.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>org-slf4j</artifactId>
-                        <groupId>slf4j-api</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
                 <groupId>com.github.sgroschupf</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
@@ -300,6 +251,18 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>libthrift</artifactId>
+                <version>${libthrift.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>org-slf4j</artifactId>
+                        <groupId>slf4j-api</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
