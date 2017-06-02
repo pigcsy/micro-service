@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan(basePackages = {"com.system.service", "com.cache.support.redis"})
-@Import(value = { MicroExceptionHandler.class,TransmitAuthenticationProcessingConfiguration.class} )
+@Import(value = {MicroExceptionHandler.class, TransmitAuthenticationProcessingConfiguration.class})
 public class CommonConfig {
 
 }

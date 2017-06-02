@@ -15,19 +15,19 @@ import java.util.Map;
 @Configuration
 public class DataSourceConfig {
 
-	@Bean("commonDruidDataProperties")
-	@ConfigurationProperties(prefix = "spring.datasource.common")
-	public Map<String, String> commonDruidDataProperties() {
-		return new HashMap<String, String>();
-	}
+    @Bean("commonDruidDataProperties")
+    @ConfigurationProperties(prefix = "spring.datasource.common")
+    public Map<String, String> commonDruidDataProperties() {
+        return new HashMap<String, String>();
+    }
 
-	@Bean(name = "commonDataSource")
-	@Primary
-	public DataSource druidDataSource() {
-		DruidDataSource dataSource = new DruidDataSource();
-		MutablePropertyValues properties = new MutablePropertyValues(commonDruidDataProperties());
-		new RelaxedDataBinder(dataSource).bind(properties);
-		return dataSource;
-	}
+    @Bean(name = "commonDataSource")
+    @Primary
+    public DataSource druidDataSource() {
+        DruidDataSource dataSource = new DruidDataSource();
+        MutablePropertyValues properties = new MutablePropertyValues(commonDruidDataProperties());
+        new RelaxedDataBinder(dataSource).bind(properties);
+        return dataSource;
+    }
 
 }

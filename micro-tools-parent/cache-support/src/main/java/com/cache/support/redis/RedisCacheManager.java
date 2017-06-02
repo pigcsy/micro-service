@@ -61,24 +61,24 @@ public class RedisCacheManager {
     /**
      * 查询缓存里从start到end的数据
      */
-    public <T> List<T> getAllList(String key, Class<T> t, long start,long end){
-    	return (List<T>)redisTemplate.boundListOps(key).range(start, end);
+    public <T> List<T> getAllList(String key, Class<T> t, long start, long end) {
+        return (List<T>) redisTemplate.boundListOps(key).range(start, end);
     }
-    
+
     /**
      * 一次获取number个
      */
     public <T> List<T> getListViaNum(String key, Class<T> t, long number) {
-    	List<T> list = new ArrayList<>();
-    	long num = redisTemplate.boundListOps(key).size();
-    	if (number <= 0)
-    		return list;
-    	if (num < number){
-    		number = num;
-    	}
-    	for (int i = 0;i < number;i++){
-    		list.add((T)redisTemplate.boundListOps(key).leftPop());
-    	}
+        List<T> list = new ArrayList<>();
+        long num = redisTemplate.boundListOps(key).size();
+        if (number <= 0)
+            return list;
+        if (num < number) {
+            number = num;
+        }
+        for (int i = 0; i < number; i++) {
+            list.add((T) redisTemplate.boundListOps(key).leftPop());
+        }
         return list;
     }
 
@@ -114,13 +114,14 @@ public class RedisCacheManager {
         redisTemplate.boundHashOps(key).put(field, value);
     }
 
-    public void putHashInExpire(final String key, final String field, final Object value,final long expire) {
-    	 BoundHashOperations oper = redisTemplate.boundHashOps(key);
-    	 oper.put(field, value);
-    	 if (expire > 0 ) {
-    		 oper.expire(expire, TimeUnit.SECONDS);
-    	 }
+    public void putHashInExpire(final String key, final String field, final Object value, final long expire) {
+        BoundHashOperations oper = redisTemplate.boundHashOps(key);
+        oper.put(field, value);
+        if (expire > 0) {
+            oper.expire(expire, TimeUnit.SECONDS);
+        }
     }
+
     public <T> T getHash(final String key, final String field, Class<T> clazz) {
         return (T) redisTemplate.boundHashOps(key).get(field);
     }
@@ -128,37 +129,39 @@ public class RedisCacheManager {
     public long incr(final String key, long delta) {
         return redisTemplate.opsForValue().increment(key, delta);
     }
-    
+
     /**
      * 放到set集合中
+     *
      * @param key
      * @param v
      * @param expire
      */
     public void putSet(String key, Object v, long expire) {
-    	BoundSetOperations<String, Object> oper = redisTemplate.boundSetOps(key);
+        BoundSetOperations<String, Object> oper = redisTemplate.boundSetOps(key);
         oper.add(v);
         if (expire > 0)
             oper.expire(expire, TimeUnit.SECONDS);
     }
-    
-    public <T> Set<T> getSet(String key ,Class<T> t,long count){
-    	long size = redisTemplate.boundSetOps(key).size();
-    	if (size >= count){
-    		return (Set<T>) redisTemplate.boundSetOps(key).distinctRandomMembers(count);
-    	} else {
-    		return (Set<T>) redisTemplate.boundSetOps(key).distinctRandomMembers(size);
-    	}
+
+    public <T> Set<T> getSet(String key, Class<T> t, long count) {
+        long size = redisTemplate.boundSetOps(key).size();
+        if (size >= count) {
+            return (Set<T>) redisTemplate.boundSetOps(key).distinctRandomMembers(count);
+        } else {
+            return (Set<T>) redisTemplate.boundSetOps(key).distinctRandomMembers(size);
+        }
     }
-    
+
     /**
      * 判断obj是否在set集合中
+     *
      * @param key
      * @param obj 待判断对象
      * @return true 存在，false不存在
      */
-    public boolean isInSet(String key , Object obj){
-    	return redisTemplate.boundSetOps(key).isMember(obj);
+    public boolean isInSet(String key, Object obj) {
+        return redisTemplate.boundSetOps(key).isMember(obj);
     }
 
 }

@@ -36,71 +36,70 @@ import java.util.List;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
-	Logger logger = LoggerFactory.getLogger(this.getClass());
-	@Autowired
-	DataSource dataSource;
-	@Autowired
-	AuthenticationManager authenticationManager;
-	@Autowired
-	RedisConnectionFactory connectionFactory;
-	@Autowired
-	AuthorizationClient authorizationClient;
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    DataSource dataSource;
+    @Autowired
+    AuthenticationManager authenticationManager;
+    @Autowired
+    RedisConnectionFactory connectionFactory;
+    @Autowired
+    AuthorizationClient authorizationClient;
 
-	@Override
-	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.jdbc(dataSource);
-	}
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.jdbc(dataSource);
+    }
 
-	@Override
-	public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-		oauthServer.allowFormAuthenticationForClients();
-		oauthServer.accessDeniedHandler(new MicroAccessDeniedHandler())
-		.authenticationEntryPoint(new MicroAuthenticationEntryPoint());
-	}
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+        oauthServer.allowFormAuthenticationForClients();
+        oauthServer.accessDeniedHandler(new MicroAccessDeniedHandler())
+                .authenticationEntryPoint(new MicroAuthenticationEntryPoint());
+    }
 
-	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		// 启用redis支持
-		endpoints.authenticationManager(authenticationManager).tokenStore(new RedisTokenStore(connectionFactory));
-		// 支持password ClientCredentials 两种方式
-		endpoints.tokenGranter(new TokenGranter() {
-			private CompositeTokenGranter delegate;
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        // 启用redis支持
+        endpoints.authenticationManager(authenticationManager).tokenStore(new RedisTokenStore(connectionFactory));
+        // 支持password ClientCredentials 两种方式
+        endpoints.tokenGranter(new TokenGranter() {
+            private CompositeTokenGranter delegate;
 
-			@Override
-			public OAuth2AccessToken grant(String grantType, TokenRequest tokenRequest) {
-				if (delegate == null) {
-					delegate = new CompositeTokenGranter(getTokenGranters(endpoints));
-				}
-				return delegate.grant(grantType, tokenRequest);
-			}
-		});
-		
-		
-		
-		endpoints.exceptionTranslator(new WebResponseExceptionTranslator() {
-			@Override
-			public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
-				logger.error("认证失败",e);
-				MicroException exception = null;
-				if(e.getCause() != null &&  e.getCause() instanceof MicroException){
-					exception = (MicroException)e.getCause();
-				} else {
-					exception = new MicroAuthorizationException("认证失败",e);
-				}
-				return new ResponseEntity<OAuth2Exception>(new CustomOAuth2Exception(exception), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
-			}
-		});
-	}
+            @Override
+            public OAuth2AccessToken grant(String grantType, TokenRequest tokenRequest) {
+                if (delegate == null) {
+                    delegate = new CompositeTokenGranter(getTokenGranters(endpoints));
+                }
+                return delegate.grant(grantType, tokenRequest);
+            }
+        });
 
-	// token生成方式
-	private List<TokenGranter> getTokenGranters(AuthorizationServerEndpointsConfigurer endpoints) {
-		List<TokenGranter> tokenGranters = new ArrayList<TokenGranter>();
-		tokenGranters.add(new CustomClientCredentialsTokenGranter(endpoints.getTokenServices(),
-				endpoints.getClientDetailsService(), endpoints.getOAuth2RequestFactory(),authorizationClient));
-		tokenGranters
-				.add(new CustomResourceOwnerPasswordTokenGranter(authenticationManager, endpoints.getTokenServices(),
-						endpoints.getClientDetailsService(), endpoints.getOAuth2RequestFactory()));
-		return tokenGranters;
-	}
+
+        endpoints.exceptionTranslator(new WebResponseExceptionTranslator() {
+            @Override
+            public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
+                logger.error("认证失败", e);
+                MicroException exception = null;
+                if (e.getCause() != null && e.getCause() instanceof MicroException) {
+                    exception = (MicroException) e.getCause();
+                } else {
+                    exception = new MicroAuthorizationException("认证失败", e);
+                }
+                return new ResponseEntity<OAuth2Exception>(new CustomOAuth2Exception(exception), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        });
+    }
+
+    // token生成方式
+    private List<TokenGranter> getTokenGranters(AuthorizationServerEndpointsConfigurer endpoints) {
+        List<TokenGranter> tokenGranters = new ArrayList<TokenGranter>();
+        tokenGranters.add(new CustomClientCredentialsTokenGranter(endpoints.getTokenServices(),
+                endpoints.getClientDetailsService(), endpoints.getOAuth2RequestFactory(), authorizationClient));
+        tokenGranters
+                .add(new CustomResourceOwnerPasswordTokenGranter(authenticationManager, endpoints.getTokenServices(),
+                        endpoints.getClientDetailsService(), endpoints.getOAuth2RequestFactory()));
+        return tokenGranters;
+    }
 
 }

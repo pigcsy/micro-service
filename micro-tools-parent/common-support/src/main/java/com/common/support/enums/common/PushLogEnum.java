@@ -60,12 +60,12 @@ public class PushLogEnum {
         private byte value;
 
         public static ChannelTypeEn toEnumByV(byte v) {
-        		for (ChannelTypeEn en : ChannelTypeEn.values()) {
-        			if (en.getValue() == v)
-        				return en;
-        		}
-        		return null;
-        	}
+            for (ChannelTypeEn en : ChannelTypeEn.values()) {
+                if (en.getValue() == v)
+                    return en;
+            }
+            return null;
+        }
     }
 
     /**
@@ -74,17 +74,18 @@ public class PushLogEnum {
     @Getter
     @AllArgsConstructor
     public enum StatusEn {
-        NEVER_READ("未读", (byte)0), ALREADY_READ("已读", (byte)1), DELETE("删除", (byte)2);
+        NEVER_READ("未读", (byte) 0), ALREADY_READ("已读", (byte) 1), DELETE("删除", (byte) 2);
 
         private String name;
         private byte value;
+
         public static StatusEn toEnumByV(byte v) {
-        		for (StatusEn en : StatusEn.values()) {
-        			if (en.getValue() == v)
-        				return en;
-        		}
-        		return null;
-        	}
+            for (StatusEn en : StatusEn.values()) {
+                if (en.getValue() == v)
+                    return en;
+            }
+            return null;
+        }
     }
 
 }

@@ -18,7 +18,6 @@ import java.io.Serializable;
  *
  * @author 半轴
  * @date: 2016年5月31日 下午4:58:49 <br/>
- * @version
  * @since JDK 1.8
  */
 public class BaseRequest implements Serializable {

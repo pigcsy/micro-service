@@ -19,7 +19,7 @@ public class BooleanTypeHandler implements TypeHandler {
     public Object getResult(ResultSet arg0, String arg1) throws SQLException {
         String str = arg0.getString(arg1);
         Boolean rt = Boolean.FALSE;
-        if (str.equalsIgnoreCase("Y")){
+        if (str.equalsIgnoreCase("Y")) {
             rt = Boolean.TRUE;
         }
         return rt;
@@ -29,7 +29,7 @@ public class BooleanTypeHandler implements TypeHandler {
     public Object getResult(ResultSet resultSet, int i) throws SQLException {
         String str = resultSet.getString(String.valueOf(resultSet));
         Boolean rt = Boolean.FALSE;
-        if (str.equalsIgnoreCase("Y")){
+        if (str.equalsIgnoreCase("Y")) {
             rt = Boolean.TRUE;
         }
         return rt;

@@ -6,7 +6,7 @@ public class HttpConstant {
      * 下载文件头
      */
     public static final String DOWNLOAD_HEADER = "Content-Disposition";
-    
+
     /**
      * 内部授权
      */

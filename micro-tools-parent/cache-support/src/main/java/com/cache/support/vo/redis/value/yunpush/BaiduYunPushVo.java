@@ -11,11 +11,9 @@ import lombok.Data;
  */
 @Data
 public class BaiduYunPushVo extends BaseRedisVo {
-    private static final long serialVersionUID = 2057248738228211817L;
-
     public static final int TO_SINGLE = 1;
     public static final int TO_ALL = 2;
-
+    private static final long serialVersionUID = 2057248738228211817L;
     private Integer id;
     private String apiKey;
     private String secretKey;

@@ -5,9 +5,9 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 public class CustomRedisTokenStore extends RedisTokenStore {
 
-	public CustomRedisTokenStore(RedisConnectionFactory connectionFactory) {
-		super(connectionFactory);
-		// TODO Auto-generated constructor stub
-	}
+    public CustomRedisTokenStore(RedisConnectionFactory connectionFactory) {
+        super(connectionFactory);
+        // TODO Auto-generated constructor stub
+    }
 
 }

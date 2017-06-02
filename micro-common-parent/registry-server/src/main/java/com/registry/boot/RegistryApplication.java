@@ -29,8 +29,8 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 @EnableTurbine
 public class RegistryApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(RegistryApplication.class, args);
-	}
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(RegistryApplication.class, args);
+    }
 
 }

@@ -18,39 +18,38 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 @Primary
 public class CustomPasswordRestTemplateFactory {
 
-	private final OAuth2ClientContext oauth2ClientContext;
+    private final OAuth2ClientContext oauth2ClientContext;
+    @Autowired
+    LoadBalancerClient loadBalancerClient;
+    @Autowired
+    LoadBalancerRequestFactory requestFactory;
+    private OAuth2RestTemplate template;
 
-	private OAuth2RestTemplate template;
-	@Autowired
-	LoadBalancerClient loadBalancerClient;
-	@Autowired
-	LoadBalancerRequestFactory requestFactory;
+    public CustomPasswordRestTemplateFactory(ObjectProvider<OAuth2ClientContext> oauth2ClientContextProvider) {
+        this.oauth2ClientContext = oauth2ClientContextProvider.getIfAvailable();
+    }
 
-	public LoadBalancerInterceptor ribbonInterceptor() {
-		return new LoadBalancerInterceptor(loadBalancerClient, requestFactory);
-	}
+    public LoadBalancerInterceptor ribbonInterceptor() {
+        return new LoadBalancerInterceptor(loadBalancerClient, requestFactory);
+    }
 
-	@Bean
-	@ConfigurationProperties(prefix = "security.oauth2.client")
-	public ResourceOwnerPasswordResourceDetails getDetail() {
-		return new ResourceOwnerPasswordResourceDetails();
-	}
+    @Bean
+    @ConfigurationProperties(prefix = "security.oauth2.client")
+    public ResourceOwnerPasswordResourceDetails getDetail() {
+        return new ResourceOwnerPasswordResourceDetails();
+    }
 
-	public CustomPasswordRestTemplateFactory(ObjectProvider<OAuth2ClientContext> oauth2ClientContextProvider) {
-		this.oauth2ClientContext = oauth2ClientContextProvider.getIfAvailable();
-	}
+    public OAuth2RestTemplate getUserInfoRestTemplate() {
+        if (this.template == null) {
+            this.template = getTemplate();
+            ResourceOwnerPasswordAccessTokenProvider accessTokenProvider = new ResourceOwnerPasswordAccessTokenProvider();
+            accessTokenProvider.setInterceptors(com.google.common.collect.Lists.newArrayList(ribbonInterceptor()));
+            this.template.setAccessTokenProvider(accessTokenProvider);
+        }
+        return this.template;
+    }
 
-	public OAuth2RestTemplate getUserInfoRestTemplate() {
-		if (this.template == null) {
-			this.template = getTemplate();
-			ResourceOwnerPasswordAccessTokenProvider accessTokenProvider = new ResourceOwnerPasswordAccessTokenProvider();
-			accessTokenProvider.setInterceptors(com.google.common.collect.Lists.newArrayList(ribbonInterceptor()));
-			this.template.setAccessTokenProvider(accessTokenProvider);
-		}
-		return this.template;
-	}
-
-	private OAuth2RestTemplate getTemplate() {
-		return new OAuth2RestTemplate(this.getDetail(), this.oauth2ClientContext);
-	}
+    private OAuth2RestTemplate getTemplate() {
+        return new OAuth2RestTemplate(this.getDetail(), this.oauth2ClientContext);
+    }
 }

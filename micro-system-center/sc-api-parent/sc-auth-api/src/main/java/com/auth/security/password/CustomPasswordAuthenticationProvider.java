@@ -32,77 +32,76 @@ import java.util.stream.Collectors;
 @Component
 public class CustomPasswordAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
 
-	@Autowired
-	private CustomUserDetailService userDetailsService;
-	@Autowired
-	AuthorizationClient authorizationClient;
+    @Autowired
+    AuthorizationClient authorizationClient;
+    @Autowired
+    private CustomUserDetailService userDetailsService;
+    @Value("${service.rsa.privateKey}")
+    private String rsaPrivateKey;
 
-	@Value("${service.rsa.privateKey}")
-	private String rsaPrivateKey;
+    private GrantedAuthoritiesMapper authoritiesMapper = new SimpleAuthorityMapper();
 
-	private GrantedAuthoritiesMapper authoritiesMapper = new SimpleAuthorityMapper();
+    public CustomPasswordAuthenticationProvider() {
+        this.setHideUserNotFoundExceptions(false);
+    }
 
-	public CustomPasswordAuthenticationProvider() {
-		this.setHideUserNotFoundExceptions(false);
-	}
+    protected void additionalAuthenticationChecks(UserDetails userDetails,
+                                                  UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
+        try {
+            if (authentication.getCredentials() == null) {
+                logger.debug("- failed: no credentials provided");
+                throw new LogicException("密码不能为空");
+            }
+            String rawPass = authentication.getCredentials().toString();
+            String md5Pwd = AppUtils.md5Encrypt(RSAUtils.decryptByPrivateKey(rawPass, rsaPrivateKey));
+            // String md5Pwd = AppUtils.md5Encrypt(rawPass);
+            if (!md5Pwd.equalsIgnoreCase(userDetails.getPassword())) {
+                throw new LogicException("密码错误");
+            }
+        } catch (Exception e) {
+            throw new BadCredentialsException("密码错误", e);
+        }
+    }
 
-	protected void additionalAuthenticationChecks(UserDetails userDetails,
-			UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-		try {
-			if (authentication.getCredentials() == null) {
-				logger.debug("- failed: no credentials provided");
-				throw new LogicException("密码不能为空");
-			}
-			String rawPass = authentication.getCredentials().toString();
-			String md5Pwd = AppUtils.md5Encrypt(RSAUtils.decryptByPrivateKey(rawPass, rsaPrivateKey));
-			// String md5Pwd = AppUtils.md5Encrypt(rawPass);
-			if (!md5Pwd.equalsIgnoreCase(userDetails.getPassword())) {
-				throw new LogicException("密码错误");
-			}
-		} catch (Exception e) {
-			throw new BadCredentialsException("密码错误", e);
-		}
-	}
+    protected final UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication)
+            throws AuthenticationException {
+        UserDetails loadedUser;
 
-	protected final UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication)
-			throws AuthenticationException {
-		UserDetails loadedUser;
+        try {
 
-		try {
+            loadedUser = userDetailsService.loadUserByUsername(username, authentication);
+        } catch (UsernameNotFoundException notFound) {
+            throw notFound;
+        } catch (Exception repositoryProblem) {
+            throw new InternalAuthenticationServiceException("未知错误", repositoryProblem);
+        }
+        return loadedUser;
+    }
 
-			loadedUser = userDetailsService.loadUserByUsername(username, authentication);
-		} catch (UsernameNotFoundException notFound) {
-			throw notFound;
-		} catch (Exception repositoryProblem) {
-			throw new InternalAuthenticationServiceException("未知错误", repositoryProblem);
-		}
-		return loadedUser;
-	}
+    @SuppressWarnings("unchecked")
+    /**
+     * 调用system 获取用户信息
+     */
+    protected Authentication createSuccessAuthentication(Object principal, Authentication authentication,
+                                                         UserDetails user) {
+        String clientId = ((Map<String, Object>) authentication.getDetails()).get("client_id").toString();
+        AdminStaffVo staff = authorizationClient.getAdminStaff(user.getUsername());
+        List<String> authoritys = authorizationClient.getStaffAuthority(staff.getStaffId());
+        OauthSystemVo oauthSystemVo = authorizationClient.getOauthSystem(clientId);
 
-	@SuppressWarnings("unchecked")
-	/**
-	 * 调用system 获取用户信息
-	 */
-	protected Authentication createSuccessAuthentication(Object principal, Authentication authentication,
-			UserDetails user) {
-		String clientId = ((Map<String, Object>) authentication.getDetails()).get("client_id").toString();
-		AdminStaffVo staff = authorizationClient.getAdminStaff(user.getUsername());
-		List<String> authoritys = authorizationClient.getStaffAuthority(staff.getStaffId());
-		OauthSystemVo oauthSystemVo = authorizationClient.getOauthSystem(clientId);
+        DefaultCurrentPrincipal currentUser = new DefaultCurrentPrincipal(staff.getStaffId(), staff.getStaffName(),
+                staff.getSystemId(), oauthSystemVo.getSystemType(), staff.getDailyAccessNum(), staff.getMinuteAccessNum());
+        SystemEn systemEn = SystemEn.toEnum(oauthSystemVo.getSystemType());
+        List<GrantedAuthority> authorityList = authoritys.stream()
+                .map(authority -> new SimpleGrantedAuthority(systemEn.getRolePrefix() + authority))
+                .collect(Collectors.toList());
+        Collection<? extends GrantedAuthority> authorities = authoritiesMapper.mapAuthorities(authorityList);
 
-		DefaultCurrentPrincipal currentUser = new DefaultCurrentPrincipal(staff.getStaffId(), staff.getStaffName(),
-				staff.getSystemId(), oauthSystemVo.getSystemType(), staff.getDailyAccessNum(), staff.getMinuteAccessNum());
-		SystemEn systemEn = SystemEn.toEnum(oauthSystemVo.getSystemType());
-		List<GrantedAuthority> authorityList = authoritys.stream()
-				.map(authority -> new SimpleGrantedAuthority(systemEn.getRolePrefix() + authority))
-				.collect(Collectors.toList());
-		Collection<? extends GrantedAuthority> authorities = authoritiesMapper.mapAuthorities(authorityList);
-
-		UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(currentUser,
-				authentication.getCredentials(), authorities);
-		result.setDetails(authentication.getDetails());
-		return result;
-	}
+        UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(currentUser,
+                authentication.getCredentials(), authorities);
+        result.setDetails(authentication.getDetails());
+        return result;
+    }
 
 
 }

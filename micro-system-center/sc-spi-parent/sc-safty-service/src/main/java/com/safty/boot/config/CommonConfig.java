@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@ComponentScan(basePackages = {"com.safty.service", "com.cache.support.redis","com.core.support.hystrix"})
-@Import(value = { MicroExceptionHandler.class,TransmitAuthenticationProcessingConfiguration.class} )
+@ComponentScan(basePackages = {"com.safty.service", "com.cache.support.redis", "com.core.support.hystrix"})
+@Import(value = {MicroExceptionHandler.class, TransmitAuthenticationProcessingConfiguration.class})
 @EnableFeignClients(basePackages = "com.safty.provider")
 public class CommonConfig {
 

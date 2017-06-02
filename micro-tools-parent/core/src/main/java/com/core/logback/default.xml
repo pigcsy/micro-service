@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <included>
-	 
-	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
-	<springProperty scope="context" name="LOG_LEVEL" source="log.level.root"/>
-	<springProperty scope="context" name="FILE_NAME" source="spring.application.name"/>
-	<property name="BASE_HOME" value="./logs" />
-	<property name="LOG_HOME" value="${BASE_HOME}/${FILE_NAME}" />
-	<jmxConfigurator/>
-	<!-- 控制台输出 -->
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
-		</encoder>
-	</appender>
-	<!-- 按照每天生成日志文件 -->
-	<appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>${LOG_HOME}/${FILE_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
-			<MaxHistory>30</MaxHistory>
-		</rollingPolicy>
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>${FILE_LOG_PATTERN}</pattern>
-		</encoder>
-		<!--日志文件最大的大小-->
-	</appender>
-	 
-	<logger name="com.aliyun" level="warn"/>
-	<logger name="org.apache.zookeeper" level="warn"/>
-	<logger name="org.apache.kafka" level="warn"/>
-	<logger name="com.netflix" level="warn"/>
-	<logger name="org.springframework" level="warn"/>
-	<logger name="org.apache.http" level="warn"/>
-	<logger name="org.hibernate" level="warn"/>
-	<logger name="org.apache.catalina" level="warn"/>
-	<logger name="org.I0Itec.zkclient" level="warn"/>
- 
-	<appender name="loghub" class="com.core.support.aliyun.log.LoghubAppender">
-	 
-	</appender>
 
-	<!-- 日志输出级别 -->
-	<root level="LOG_LEVEL">
-		<appender-ref ref="STDOUT" />
-		<appender-ref ref="FILE" />
-		<appender-ref ref="loghub" />
-	</root>
-	
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="LOG_LEVEL" source="log.level.root"/>
+    <springProperty scope="context" name="FILE_NAME" source="spring.application.name"/>
+    <property name="BASE_HOME" value="./logs"/>
+    <property name="LOG_HOME" value="${BASE_HOME}/${FILE_NAME}"/>
+    <jmxConfigurator/>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/${FILE_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <!--日志文件最大的大小-->
+    </appender>
+
+    <logger name="com.aliyun" level="warn"/>
+    <logger name="org.apache.zookeeper" level="warn"/>
+    <logger name="org.apache.kafka" level="warn"/>
+    <logger name="com.netflix" level="warn"/>
+    <logger name="org.springframework" level="warn"/>
+    <logger name="org.apache.http" level="warn"/>
+    <logger name="org.hibernate" level="warn"/>
+    <logger name="org.apache.catalina" level="warn"/>
+    <logger name="org.I0Itec.zkclient" level="warn"/>
+
+    <appender name="loghub" class="com.core.support.aliyun.log.LoghubAppender">
+
+    </appender>
+
+    <!-- 日志输出级别 -->
+    <root level="LOG_LEVEL">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="loghub"/>
+    </root>
+
 </included>

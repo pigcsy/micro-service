@@ -14,18 +14,17 @@ public class PaintRepairActivityEn {
     @Getter
     @AllArgsConstructor
     public enum StatusEnum {
-        ALREADY_SIGN_UP("已报名", (byte)0), SUCCESS("报名成功", (byte)1), FAIL("报名失败", (byte)9)
-        ;
+        ALREADY_SIGN_UP("已报名", (byte) 0), SUCCESS("报名成功", (byte) 1), FAIL("报名失败", (byte) 9);
         private String name;
         private byte value;
 
         public static StatusEnum toEnumByV(byte v) {
-        		for (StatusEnum en : StatusEnum.values()) {
-        			if (en.getValue() == v)
-        				return en;
-        		}
-        		return null;
-        	}
+            for (StatusEnum en : StatusEnum.values()) {
+                if (en.getValue() == v)
+                    return en;
+            }
+            return null;
+        }
     }
 
 }

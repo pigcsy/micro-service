@@ -2,47 +2,42 @@ package com.safty.domain.response;
 
 import java.io.Serializable;
 
-public class RiskResponse  implements Serializable{
+public class RiskResponse implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1922263451002591535L;
-	
-	private String code;
-	
-	private String message;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1922263451002591535L;
 
-	public RiskResponse() {
-		super();
-	}
+    private String code;
 
-	public RiskResponse(String code, String message) {
-		super();
-		this.code = code;
-		this.message = message;
-	}
+    private String message;
 
-	public String getCode() {
-		return code;
-	}
+    public RiskResponse() {
+        super();
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public RiskResponse(String code, String message) {
+        super();
+        this.code = code;
+        this.message = message;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	
+    public String getMessage() {
+        return message;
+    }
 
-	
-	
-	
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
 
 }

@@ -13,33 +13,33 @@ import java.util.List;
 
 @FeignClient(name = "sc-system-service", fallbackFactory = AuthorizationFallbackFactory.class, configuration = FeignClientConfiguration.class)
 public interface AuthorizationClient {
-	
-	
-	/**
-	 * 获取授权系统信息
-	 * 
-	 * @param clientId
-	 * @return
-	 */
-	@RequestMapping(value = "/auth/queryClientDetailsById", method = RequestMethod.POST)
-	OauthSystemVo getOauthSystem(@RequestParam("clientId") String clientId);
 
-	/**
-	 * 获取员工信息
-	 * 
-	 * @param staffName
-	 * @return
-	 */
-	@RequestMapping(value = "/auth/staff-queryByName", method = RequestMethod.POST)
-	AdminStaffVo getAdminStaff(@RequestParam("code") String staffName);
 
-	/**
-	 * 员工角色
-	 * 
-	 * @return
-	 */
-	@RequestMapping(value = "/auth/queryRoleByStaffId", method = RequestMethod.POST)
-	List<String> getStaffAuthority(@RequestParam("staffId") Integer staffId);
- 
+    /**
+     * 获取授权系统信息
+     *
+     * @param clientId
+     * @return
+     */
+    @RequestMapping(value = "/auth/queryClientDetailsById", method = RequestMethod.POST)
+    OauthSystemVo getOauthSystem(@RequestParam("clientId") String clientId);
+
+    /**
+     * 获取员工信息
+     *
+     * @param staffName
+     * @return
+     */
+    @RequestMapping(value = "/auth/staff-queryByName", method = RequestMethod.POST)
+    AdminStaffVo getAdminStaff(@RequestParam("code") String staffName);
+
+    /**
+     * 员工角色
+     *
+     * @return
+     */
+    @RequestMapping(value = "/auth/queryRoleByStaffId", method = RequestMethod.POST)
+    List<String> getStaffAuthority(@RequestParam("staffId") Integer staffId);
+
 
 }

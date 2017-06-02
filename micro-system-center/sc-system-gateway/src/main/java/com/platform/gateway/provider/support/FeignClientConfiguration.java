@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import(FeignClientsConfiguration.class)
 public class FeignClientConfiguration extends DefaultFeignClientConfiguration {
-	@Bean
-	public AccessClientFallbackFactory accessClientFallbackFactory(){
-		return new AccessClientFallbackFactory();
-	}
+    @Bean
+    public AccessClientFallbackFactory accessClientFallbackFactory() {
+        return new AccessClientFallbackFactory();
+    }
 }

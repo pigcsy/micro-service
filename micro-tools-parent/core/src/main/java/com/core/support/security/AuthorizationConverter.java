@@ -5,7 +5,6 @@ import com.aliyun.openservices.shade.com.alibaba.rocketmq.shade.com.alibaba.fast
 import com.core.exception.InvalidTokenException;
 import com.core.exception.LogicException;
 import com.core.utils.RSAUtils;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.jwt.Jwt;
 import org.springframework.security.jwt.JwtHelper;
@@ -46,14 +45,14 @@ public class AuthorizationConverter {
         System.out.println(principalStr);
         ;
         try {
-			System.out.println(RSAUtils.decryptByPrivateKey(principalStr, INTERNAL_SERVICE_ACCESS_PRIVATE_KEY));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            System.out.println(RSAUtils.decryptByPrivateKey(principalStr, INTERNAL_SERVICE_ACCESS_PRIVATE_KEY));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 //        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsInN5c3RlbV90eXBlIjoxLCJzeXN0ZW1faWQiOjEsIm5hbWUiOiJhIiwiZXhwIjoxNDkzOTQ3MjA1NzQ5fQ.M_Y8mH7S7pVcCgE9dZuA6Vi1Qrmyk05jiiOfO8qY6yWFlvyLdSmu9yeocnsgDR8iSMzYtpJTySRBYxX8rmAxaUHjZ_hQuZ8E3_Qv9MRI8XoNstlufj5EXtqknD1CpZDa1RXdfZRPlBDIl0_ZY_nsjpZqzffOBE9wWRgySRY9ezo
 
-        
+
         System.err.println(convert.decode(principalStr).toString());
     }
 
@@ -115,7 +114,8 @@ public class AuthorizationConverter {
         principal.setSystemId(Integer.parseInt(map.get(SYSTEM_ID).toString()));
         principal.setSystemType(Integer.parseInt(map.get(SYSTEM_TYPE).toString()));
         principal.setUid(Integer.parseInt(map.get(UID).toString()));
-        principal.setAdditionalInfo(map.get(ADDITIONAL) == null ?new HashMap<>():JSON.parseObject(map.get(ADDITIONAL).toString(),new TypeReference<Map<String, String>>(){}));
+        principal.setAdditionalInfo(map.get(ADDITIONAL) == null ? new HashMap<>() : JSON.parseObject(map.get(ADDITIONAL).toString(), new TypeReference<Map<String, String>>() {
+        }));
         return principal;
     }
 

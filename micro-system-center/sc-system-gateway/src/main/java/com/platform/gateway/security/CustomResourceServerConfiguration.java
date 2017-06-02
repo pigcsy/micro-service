@@ -21,37 +21,36 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 @Configuration
 public class CustomResourceServerConfiguration extends DefaultResourceServerConfiguration {
 
-	SecurityInterceptor securityInterceptor;
-	@Autowired
-	SecurityMetadataSource securityMetadataSource;
-	
-	@Value(value = "${security.oauth2.resource.id:gateway}")
-	private String resourceId;
+    SecurityInterceptor securityInterceptor;
+    @Autowired
+    SecurityMetadataSource securityMetadataSource;
 
-	@Bean(name = "adminOauth2ClientConfig")
-	@Primary
-	@ConfigurationProperties(prefix = "security.oauth2.client.admin")
-	public Oauth2ClientConfig getAdminOauth2ClientConfig() {
-		return new Oauth2ClientConfig();
-	}
+    @Value(value = "${security.oauth2.resource.id:gateway}")
+    private String resourceId;
 
-	@Override
-	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-		resources.resourceId(resourceId);
-		super.configure(resources);
-	}
+    @Bean(name = "adminOauth2ClientConfig")
+    @Primary
+    @ConfigurationProperties(prefix = "security.oauth2.client.admin")
+    public Oauth2ClientConfig getAdminOauth2ClientConfig() {
+        return new Oauth2ClientConfig();
+    }
 
-	
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        resources.resourceId(resourceId);
+        super.configure(resources);
+    }
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		securityInterceptor = new SecurityInterceptor(securityMetadataSource);
-		http.addFilterAfter(securityInterceptor, FilterSecurityInterceptor.class);
-		
-		http.httpBasic().authenticationEntryPoint(new MicroAuthenticationEntryPoint(new ExceptionRenderer(false)));
-		http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll().antMatchers("/login", "/token", "/system/menu/init","/OPTIONS")
-				.permitAll().anyRequest().authenticated().and().csrf().disable();
-	}
 
-	
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+        securityInterceptor = new SecurityInterceptor(securityMetadataSource);
+        http.addFilterAfter(securityInterceptor, FilterSecurityInterceptor.class);
+
+        http.httpBasic().authenticationEntryPoint(new MicroAuthenticationEntryPoint(new ExceptionRenderer(false)));
+        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll().antMatchers("/login", "/token", "/system/menu/init", "/OPTIONS")
+                .permitAll().anyRequest().authenticated().and().csrf().disable();
+    }
+
+
 }

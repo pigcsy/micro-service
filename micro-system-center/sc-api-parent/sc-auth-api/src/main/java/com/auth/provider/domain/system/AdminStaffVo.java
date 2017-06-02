@@ -1,6 +1,7 @@
 package com.auth.provider.domain.system;
 
 import lombok.Data;
+
 @Data
 public class AdminStaffVo {
     private Integer staffId;
@@ -13,5 +14,5 @@ public class AdminStaffVo {
 
     private int dailyAccessNum;
     private int minuteAccessNum;
-    
+
 }

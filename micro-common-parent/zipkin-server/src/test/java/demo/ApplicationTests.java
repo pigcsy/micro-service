@@ -1,10 +1,6 @@
 package demo;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-import java.util.Map;
-
+import com.zipkin.boot.ZipkinApplication;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -23,7 +19,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import com.zipkin.boot.ZipkinApplication;
+import java.io.IOException;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ZipkinApplication.class)
@@ -31,30 +30,31 @@ import com.zipkin.boot.ZipkinApplication;
 @IntegrationTest("server.port=0")
 public class ApplicationTests {
 
-	@Value("${local.server.port}")
-	private int port = 0;
+    @Value("${local.server.port}")
+    private int port = 0;
 
-	@Test
-	public void configurationAvailable() {
-		@SuppressWarnings("rawtypes")
-		ResponseEntity<Map> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + port + "/app/cloud", Map.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
-
-	@Test
-	public void envPostAvailable() {
-		MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
-		@SuppressWarnings("rawtypes")
-		ResponseEntity<Map> entity = new TestRestTemplate().postForEntity(
-				"http://localhost:" + port + "/admin/env", form, Map.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
-	public static void main(String[] args) throws ClientProtocolException, IOException {
-		HttpClientBuilder builder = HttpClientBuilder.create();
+    public static void main(String[] args) throws ClientProtocolException, IOException {
+        HttpClientBuilder builder = HttpClientBuilder.create();
 //		HttpPost post = new HttpPost("http://localhost:8088/refresh");
-		HttpPost post = new HttpPost("http://localhost:8888/bus/refresh");
-		CloseableHttpResponse response = builder.build().execute(post);
-		System.out.println(EntityUtils.toString(response.getEntity()));
-	}
+        HttpPost post = new HttpPost("http://localhost:8888/bus/refresh");
+        CloseableHttpResponse response = builder.build().execute(post);
+        System.out.println(EntityUtils.toString(response.getEntity()));
+    }
+
+    @Test
+    public void configurationAvailable() {
+        @SuppressWarnings("rawtypes")
+        ResponseEntity<Map> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + port + "/app/cloud", Map.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
+
+    @Test
+    public void envPostAvailable() {
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+        @SuppressWarnings("rawtypes")
+        ResponseEntity<Map> entity = new TestRestTemplate().postForEntity(
+                "http://localhost:" + port + "/admin/env", form, Map.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
 }

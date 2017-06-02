@@ -29,8 +29,7 @@ public class AccessController extends AbstractController {
     /**
      * 限制检查
      *
-     * @param
-     * request
+     * @param request
      * @return
      */
     @RequestMapping(value = "/check", method = RequestMethod.POST)

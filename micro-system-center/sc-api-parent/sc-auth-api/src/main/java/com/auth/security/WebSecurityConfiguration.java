@@ -14,24 +14,24 @@ import org.springframework.security.oauth2.provider.client.ClientCredentialsToke
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		  http.formLogin().loginPage("/login").permitAll().and().authorizeRequests()
-						.antMatchers("/management/**", "/oauth/token").permitAll().anyRequest()
-						.authenticated().and().csrf().disable();
-	}
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.formLogin().loginPage("/login").permitAll().and().authorizeRequests()
+                .antMatchers("/management/**", "/oauth/token").permitAll().anyRequest()
+                .authenticated().and().csrf().disable();
+    }
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.parentAuthenticationManager(authenticationManager);
-		
-		ClientCredentialsTokenGranter a;
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.parentAuthenticationManager(authenticationManager);
+
+        ClientCredentialsTokenGranter a;
 //		auth.authenticationProvider(new CustomerAuthenticationProvider());
 //		auth.userDetailsService(new CustomerUserDetailService());
-	}
-	
-	 
+    }
+
+
 }

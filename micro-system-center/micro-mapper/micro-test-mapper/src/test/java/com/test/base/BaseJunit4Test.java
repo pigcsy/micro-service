@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 // defaultRollback = true)
 // ------------
 @RunWith(SpringJUnit4ClassRunner.class) // 使用junit4进行测试
-@ContextConfiguration({ "classpath*:spring/spring-context-*.xml" }) // 加载配置文件
+@ContextConfiguration({"classpath*:spring/spring-context-*.xml"}) // 加载配置文件
 @org.springframework.transaction.annotation.Transactional(value = "transactionManager") // 标明此方法需使用事务
 @Rollback(false)
 public class BaseJunit4Test {

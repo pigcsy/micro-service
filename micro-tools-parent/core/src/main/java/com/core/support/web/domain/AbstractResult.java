@@ -16,7 +16,6 @@ import lombok.Data;
  *
  * @author 半轴
  * @date: 2016年6月3日 下午4:51:35 <br/>
- * @version
  * @since JDK 1.8
  */
 @Data
@@ -25,7 +24,9 @@ public class AbstractResult {
      * @fields status 状态信息，正确返回OK，否则返回 ERROR，如果返回ERROR则需要填写Message信息
      */
     // private Status status;
-    /** 1表示成功 0表示失敗 */
+    /**
+     * 1表示成功 0表示失敗
+     */
     private int flag;
     /**
      * @fields record 消息对象

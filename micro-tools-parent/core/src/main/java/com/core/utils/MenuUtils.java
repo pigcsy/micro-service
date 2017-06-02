@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
  *
  * @author 半轴
  * @date: 2016年10月19日 下午8:44:19 <br/>
- * @version
  * @since JDK 1.8
  */
 public class MenuUtils {

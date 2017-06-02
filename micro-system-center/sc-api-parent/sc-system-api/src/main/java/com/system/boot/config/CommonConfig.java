@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@ComponentScan(basePackages = {"com.system.manager", "com.core.support.hystrix","com.cache.support.redis", "com.system.provider.fallback", "com.system.provider.support"})
+@ComponentScan(basePackages = {"com.system.manager", "com.core.support.hystrix", "com.cache.support.redis", "com.system.provider.fallback", "com.system.provider.support"})
 @EnableFeignClients(basePackages = "com.system.provider.client")
-@Import(value = {TransmitAuthenticationProcessingConfiguration.class,MicroExceptionHandler.class})
+@Import(value = {TransmitAuthenticationProcessingConfiguration.class, MicroExceptionHandler.class})
 public class CommonConfig {
 
 }

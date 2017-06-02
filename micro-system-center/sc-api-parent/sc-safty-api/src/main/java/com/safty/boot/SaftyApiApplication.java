@@ -16,13 +16,12 @@
 
 package com.safty.boot;
 
+import com.core.base.DefaultSpringbootInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.ComponentScan;
-
-import com.core.base.DefaultSpringbootInitializer;
 
 @EnableEurekaClient
 @EnableHystrix

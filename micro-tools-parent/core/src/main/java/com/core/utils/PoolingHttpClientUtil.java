@@ -4,7 +4,11 @@ import com.alibaba.fastjson.JSON;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.*;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpRequest;
+import org.apache.http.NameValuePair;
+import org.apache.http.NoHttpResponseException;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -53,20 +57,38 @@ public class PoolingHttpClientUtil {
 
     private static final String NET_HTTP = "http";
     private static final String NET_HTTPS = "https";
-
+    private final static Object syncLock = new Object();
     private int timeOut = 60;
     private int maxTotal = 20;
     private int maxPerRoute = 20;
     private int retryTimes = 5;
-    private String charset = "utf-8";
     // static final int timeOut = 10 * 1000;
-
+    private String charset = "utf-8";
     private CloseableHttpClient httpClient = null;
-
-    private final static Object syncLock = new Object();
 
     public PoolingHttpClientUtil() {
         init();
+    }
+
+    /**
+     * 设置请求头信息
+     *
+     * @param headers
+     * @param request
+     * @return
+     */
+    private static HttpRequest setHeaders(Map<String, Object> headers, HttpRequest request) {
+        for (Map.Entry entry : headers.entrySet()) {
+            if (!entry.getKey().equals("Cookie")) {
+                request.addHeader((String) entry.getKey(), (String) entry.getValue());
+            } else {
+                Map<String, Object> Cookies = (Map<String, Object>) entry.getValue();
+                for (Map.Entry entry1 : Cookies.entrySet()) {
+                    request.addHeader(new BasicHeader("Cookie", (String) entry1.getValue()));
+                }
+            }
+        }
+        return request;
     }
 
     private void config(HttpRequestBase httpRequestBase) {
@@ -121,7 +143,7 @@ public class PoolingHttpClientUtil {
         LayeredConnectionSocketFactory sslFactory = SSLConnectionSocketFactory
                 .getSocketFactory();
         Registry<ConnectionSocketFactory> registry = RegistryBuilder
-                .<ConnectionSocketFactory> create().register(NET_HTTP, factory)
+                .<ConnectionSocketFactory>create().register(NET_HTTP, factory)
                 .register(NET_HTTPS, sslFactory).build();
         PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager(
                 registry);
@@ -170,14 +192,14 @@ public class PoolingHttpClientUtil {
         CloseableHttpClient httpClient = HttpClients.custom()
                 .setConnectionManager(cm)
                 .setRetryHandler(httpRequestRetryHandler).build();
-                // .build();
+        // .build();
 
         this.httpClient = httpClient;
         return httpClient;
     }
 
     private void setPostParams(HttpPost httPost,
-                                      Map<String, Object> params) {
+                               Map<String, Object> params) {
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
         Set<String> keySet = params.keySet();
         for (String key : keySet) {
@@ -190,22 +212,22 @@ public class PoolingHttpClientUtil {
         }
     }
 
-
     /**
      * get请求
+     *
      * @param url
      * @param headers
      * @return
      */
-    public String httpGet(String url, Map<String,Object> headers){
+    public String httpGet(String url, Map<String, Object> headers) {
         CloseableHttpClient httpClient = getHttpClient();
         HttpRequest httpGet = new HttpGet(url);
-        if(headers!=null&&!headers.isEmpty()){
+        if (headers != null && !headers.isEmpty()) {
             httpGet = setHeaders(headers, httpGet);
         }
         CloseableHttpResponse response = null;
-        try{
-            response =httpClient.execute((HttpGet)httpGet);
+        try {
+            response = httpClient.execute((HttpGet) httpGet);
 
             if (!"200".equals(response.getStatusLine().getStatusCode())) {
                 log.info("== [网络异常] == {}", JSON.toJSONString(response));
@@ -214,33 +236,33 @@ public class PoolingHttpClientUtil {
 
             HttpEntity entity = response.getEntity();
             return EntityUtils.toString(entity);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
 
         }
         return null;
     }
 
-
     /**
      * post请求,使用json格式传参
+     *
      * @param url
      * @param headers
      * @param data
      * @return
      */
-    public String httpPost(String url,Map<String,Object> headers,String data){
+    public String httpPost(String url, Map<String, Object> headers, String data) {
         CloseableHttpClient httpClient = getHttpClient();
         HttpRequest request = new HttpPost(url);
-        if(headers!=null&&!headers.isEmpty()){
-            request = setHeaders(headers,request);
+        if (headers != null && !headers.isEmpty()) {
+            request = setHeaders(headers, request);
         }
         CloseableHttpResponse response = null;
 
         try {
             HttpPost httpPost = (HttpPost) request;
             httpPost.setEntity(new StringEntity(data, ContentType.create("application/json", "UTF-8")));
-            response=httpClient.execute(httpPost);
+            response = httpClient.execute(httpPost);
 
             if (!"200".equals(response.getStatusLine().getStatusCode())) {
                 throw new RuntimeException("网络异常");
@@ -254,27 +276,28 @@ public class PoolingHttpClientUtil {
         }
         return null;
     }
+
     /**
-     使用表单键值对传参
+     * 使用表单键值对传参
      */
-    public String PostForm(String url,Map<String,Object> headers,List<NameValuePair> data){
+    public String PostForm(String url, Map<String, Object> headers, List<NameValuePair> data) {
 
         log.info("== [发送请求] ==\n url = {}, parameters = {}", url, JSON.toJSONString(data));
 
         CloseableHttpClient httpClient = getHttpClient();
         HttpRequest request = new HttpPost(url);
-        if(headers!=null&&!headers.isEmpty()){
-            request = setHeaders(headers,request);
+        if (headers != null && !headers.isEmpty()) {
+            request = setHeaders(headers, request);
         }
         CloseableHttpResponse response = null;
         UrlEncodedFormEntity uefEntity;
         try {
             HttpPost httpPost = (HttpPost) request;
-            uefEntity = new UrlEncodedFormEntity(data,"UTF-8");
+            uefEntity = new UrlEncodedFormEntity(data, "UTF-8");
             httpPost.setEntity(uefEntity);
 
             // httpPost.setEntity(new StringEntity(data, ContentType.create("application/json", "UTF-8")));
-            response=httpClient.execute(httpPost);
+            response = httpClient.execute(httpPost);
 
             if (200 != response.getStatusLine().getStatusCode()) {
                 throw new RuntimeException("网络异常");
@@ -294,8 +317,8 @@ public class PoolingHttpClientUtil {
      *
      * @param url
      * @return
-     * @author SHANHY
      * @throws IOException
+     * @author SHANHY
      * @create 2015年12月18日
      */
     public String post(String url, Map<String, Object> params) throws IOException {
@@ -353,26 +376,6 @@ public class PoolingHttpClientUtil {
             }
         }
         return null;
-    }
-
-    /**
-     * 设置请求头信息
-     * @param headers
-     * @param request
-     * @return
-     */
-    private static HttpRequest setHeaders(Map<String,Object> headers, HttpRequest request) {
-        for (Map.Entry entry : headers.entrySet()) {
-            if (!entry.getKey().equals("Cookie")) {
-                request.addHeader((String) entry.getKey(), (String) entry.getValue());
-            } else {
-                Map<String, Object> Cookies = (Map<String, Object>) entry.getValue();
-                for (Map.Entry entry1 : Cookies.entrySet()) {
-                    request.addHeader(new BasicHeader("Cookie", (String) entry1.getValue()));
-                }
-            }
-        }
-        return request;
     }
 
 }

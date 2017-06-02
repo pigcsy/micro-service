@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 public class FeignExceptionHandler extends DefaultFeignExceptionHandlerInterceptor {
-	 
-	/*
-	 * 定义一个切入点
-	 */
-	@Pointcut("execution(* com.*.provider.client..*.*(..))")
-	public void point() {
 
-	}
+    /*
+     * 定义一个切入点
+     */
+    @Pointcut("execution(* com.*.provider.client..*.*(..))")
+    public void point() {
 
-	 
+    }
+
+
 }

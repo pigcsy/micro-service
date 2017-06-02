@@ -14,23 +14,22 @@ import org.springframework.context.annotation.Import;
 
 @EnableZuulProxy
 @EnableEurekaClient
-@ComponentScan(value = { "com.platform.gateway.filter","com.platform.gateway.security", "com.cache.support.redis","com.platform.gateway.controller",
-		"com.platform.gateway.provider.support", "com.core.support.hystrix"})
+@ComponentScan(value = {"com.platform.gateway.filter", "com.platform.gateway.security", "com.cache.support.redis", "com.platform.gateway.controller", "com.platform.gateway.provider.support", "com.core.support.hystrix"})
 @EnableFeignClients(basePackages = "com.platform.gateway.provider.client")
 @Import(MicroExceptionHandler.class)
 public class SystemGatewayApplication extends DefaultSpringbootInitializer {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SystemGatewayApplication.class, args);
-	}
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(SystemGatewayApplication.class, args);
+    }
 
-	@Bean
-	public FilterRegistrationBean registrationTransmitAuthenticationProcessingFilter() {
-		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new OptionsIgnoreFilter());// ServletName默认值为首字母小写，即myServlet
-		filterRegistrationBean.addUrlPatterns("/*");
-		filterRegistrationBean.setOrder(0);
-		return filterRegistrationBean;
-	}
+    @Bean
+    public FilterRegistrationBean registrationTransmitAuthenticationProcessingFilter() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new OptionsIgnoreFilter());// ServletName默认值为首字母小写，即myServlet
+        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.setOrder(0);
+        return filterRegistrationBean;
+    }
 
 
 }

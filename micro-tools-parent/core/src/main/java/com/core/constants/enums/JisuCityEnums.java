@@ -31,7 +31,7 @@ public enum JisuCityEnums {
                 continue;
             }
 
-            if (code.equals(emun.getCode()) ) {
+            if (code.equals(emun.getCode())) {
                 return emun;
             }
         }

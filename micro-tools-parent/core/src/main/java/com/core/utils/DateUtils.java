@@ -70,20 +70,20 @@ public class DateUtils {
         return c.getTime();
     }
 
-    public static Date parseNginxDate(String ndate){
-    	if (StringUtils.isEmpty(ndate)){
-    		return null;
-    	}
-    	try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy:hh:mm:ss Z", Locale.ENGLISH);
-			Date date = formatter.parse(ndate);
-			return date;
-		} catch (Exception e) {
-			logger.error("日期" + ndate + "转为格式为日期格式出错", e);
-		}
-    	return null;
+    public static Date parseNginxDate(String ndate) {
+        if (StringUtils.isEmpty(ndate)) {
+            return null;
+        }
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy:hh:mm:ss Z", Locale.ENGLISH);
+            Date date = formatter.parse(ndate);
+            return date;
+        } catch (Exception e) {
+            logger.error("日期" + ndate + "转为格式为日期格式出错", e);
+        }
+        return null;
     }
-    
+
     public static void main(String[] args) {
         Date d = new Date();
         d = getFirstDayOfMonth(d);

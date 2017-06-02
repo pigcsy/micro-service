@@ -57,10 +57,10 @@ public class UserManager extends AbstractManager {
         if (isAdd) {
             request.setInsTm(new Date());
         }
-        if(request.getStaffId()==null){
+        if (request.getStaffId() == null) {
             throw new LogicException("员工工号不能为空");
         }
-        if(request.getPwd()==null){
+        if (request.getPwd() == null) {
             throw new LogicException("密码不能为空");
         }
         // rsa私钥解密，md5加密

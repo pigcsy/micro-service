@@ -16,6 +16,7 @@ public enum ReturnCodeEnum {
 
     private String code;
     private String msg;
+
     ReturnCodeEnum(String code, String msg) {
         this.code = code;
         this.msg = msg;

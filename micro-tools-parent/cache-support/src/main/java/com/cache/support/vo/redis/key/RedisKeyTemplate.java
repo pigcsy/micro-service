@@ -85,6 +85,7 @@ public class RedisKeyTemplate {
      * 微服务-每分钟访问频率
      */
     public static final RedisKeyConstBuilder MINUTE_ACCESS_NUM = RedisKeyConstBuilder.create("{}_MICRO_MINUTE_ACCESS_NUM_{}_{}", 60);
+
     /**
      *
      */

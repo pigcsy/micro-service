@@ -5,52 +5,52 @@ import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 
 @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = OAuth2ExceptionJacksonSerializer.class)
 public class CustomOAuth2Exception extends OAuth2Exception {
-	private String code;
-	private String message;
-	private String exception;
- 
-
-	public CustomOAuth2Exception(MicroException e) {
-		super(null);
-		code = e.getErrorCode();
-		message = e.getMessage();
-		exception = e.getClass().getName();
-	}
+    private String code;
+    private String message;
+    private String exception;
 
 
-	public String getCode() {
-		return code;
-	}
+    public CustomOAuth2Exception(MicroException e) {
+        super(null);
+        code = e.getErrorCode();
+        message = e.getMessage();
+        exception = e.getClass().getName();
+    }
 
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public String getCode() {
+        return code;
+    }
 
 
-	public String getMessage() {
-		return message;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
 
-	public String getException() {
-		return exception;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
 
-	public void setException(String exception) {
-		this.exception = exception;
-	}
+    public String getException() {
+        return exception;
+    }
 
 
-	@Override
-	public String toString() {
-		return "CustomOAuth2Exception [code=" + code + ", message=" + message + ", exception=" + exception + "]";
-	}
+    public void setException(String exception) {
+        this.exception = exception;
+    }
+
+
+    @Override
+    public String toString() {
+        return "CustomOAuth2Exception [code=" + code + ", message=" + message + ", exception=" + exception + "]";
+    }
 
 }

@@ -35,7 +35,7 @@ public class MicroExceptionHandler extends ResponseEntityExceptionHandler {
     @SuppressWarnings({"rawtypes", "unchecked"})
     @ExceptionHandler(value = {MicroException.class})
     public final ResponseEntity<ErrorResult> handleMicroException(MicroException throwable,
-                                                                HttpServletRequest request) {
+                                                                  HttpServletRequest request) {
         logger.error("", throwable);
         RequestAttributes requestAttributes = new ServletRequestAttributes(request);
         errorAttributes.getErrorAttributes(requestAttributes, false).get("javax.servlet.error.status_code");

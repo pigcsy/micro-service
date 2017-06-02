@@ -1,11 +1,10 @@
-/** 
- * Project Name:mspjapi 
- * File Name:BeanToMapUtil.java 
- * Package Name:com.mspj.frame.core.utils 
- * Date:2016年3月24日下午1:45:03 
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved. 
- * 
-*/  
+/**
+ * Project Name:mspjapi
+ * File Name:BeanToMapUtil.java
+ * Package Name:com.mspj.frame.core.utils
+ * Date:2016年3月24日下午1:45:03
+ * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
+ */
 package com.core.utils;
 
 import java.beans.BeanInfo;
@@ -17,18 +16,18 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 
+/**
  * ClassName:BeanToMapUtil <br/> 
  * Function: javaBean和map互相转换. <br/> 
  * Reason:   TODO ADD REASON. <br/> 
- * @author   轴承 
- * @Date:     2016年3月24日 下午1:45:03 <br/> 
- * @version   
- * @since    JDK 1.8 
- * @see       
+ * @author 轴承
+ * @Date: 2016年3月24日 下午1:45:03 <br/>
+ * @version
+ * @since JDK 1.8
+ * @see
  */
 public class BeanToMapUtil {
-	/**
+    /**
      * 将一个 Map 对象转化为一个 JavaBean
      * @param type 要转化的类型
      * @param map 包含属性值的 map
@@ -49,8 +48,8 @@ public class BeanToMapUtil {
         Object obj = type.newInstance(); // 创建 JavaBean 对象
 
         // 给 JavaBean 对象的属性赋值
-        PropertyDescriptor[] propertyDescriptors =  beanInfo.getPropertyDescriptors();
-        for (int i = 0; i< propertyDescriptors.length; i++) {
+        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+        for (int i = 0; i < propertyDescriptors.length; i++) {
             PropertyDescriptor descriptor = propertyDescriptors[i];
             String propertyName = descriptor.getName();
 
@@ -81,8 +80,8 @@ public class BeanToMapUtil {
         Map<String, Object> returnMap = new HashMap<String, Object>();
         BeanInfo beanInfo = Introspector.getBeanInfo(type);
 
-        PropertyDescriptor[] propertyDescriptors =  beanInfo.getPropertyDescriptors();
-        for (int i = 0; i< propertyDescriptors.length; i++) {
+        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+        for (int i = 0; i < propertyDescriptors.length; i++) {
             PropertyDescriptor descriptor = propertyDescriptors[i];
             String propertyName = descriptor.getName();
             if (!propertyName.equals("class")) {

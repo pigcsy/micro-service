@@ -72,10 +72,10 @@ public abstract class DefaultFeignClientConfiguration {
         return new Retryer.Default();
     }
 
-   @Bean
-   public feign.codec.Encoder buildEncoder() {
-       return new CustomEncode(messageConverters);
-   }
+    @Bean
+    public feign.codec.Encoder buildEncoder() {
+        return new CustomEncode(messageConverters);
+    }
 
     @Bean
     public Decoder feignDecoder() {

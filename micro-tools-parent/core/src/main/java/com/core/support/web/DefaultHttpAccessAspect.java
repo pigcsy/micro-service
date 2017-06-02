@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.time.Clock;
 
 
-
 @Aspect
 @Configuration
 @Component
@@ -40,7 +39,7 @@ public class DefaultHttpAccessAspect {
     public void before(JoinPoint jp) {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
                 .getRequest();
-        logger.info("[url]{}[url][]{}[]",request.getRequestURL(), WebUtils.getRequestParams(request));
+        logger.info("[url]{}[url][]{}[]", request.getRequestURL(), WebUtils.getRequestParams(request));
         request.setAttribute(req_start_time, Clock.systemUTC().millis());
     }
 

@@ -1,16 +1,16 @@
 package com.core.support.security;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Map;
-
-import lombok.Data;
 
 @Data
 public class DefaultCurrentPrincipal implements Serializable {
     private Integer uid;
     private Integer systemId;
     private String name = "未知";
-    private Map<String,String> additionalInfo;
+    private Map<String, String> additionalInfo;
     private Integer systemType;
     private int dailyAccessNum;
     private int minuteAccessNum;
@@ -37,13 +37,12 @@ public class DefaultCurrentPrincipal implements Serializable {
         super();
     }
 
-	@Override
-	public String toString() {
-		return "DefaultCurrentPrincipal [uid=" + uid + ", systemId=" + systemId + ", name=" + name + ", additionalInfo="
-				+ additionalInfo + ", systemType=" + systemType + ", dailyAccessNum=" + dailyAccessNum
-				+ ", minuteAccessNum=" + minuteAccessNum + "]";
-	}
+    @Override
+    public String toString() {
+        return "DefaultCurrentPrincipal [uid=" + uid + ", systemId=" + systemId + ", name=" + name + ", additionalInfo="
+                + additionalInfo + ", systemType=" + systemType + ", dailyAccessNum=" + dailyAccessNum
+                + ", minuteAccessNum=" + minuteAccessNum + "]";
+    }
 
-   
 
 }

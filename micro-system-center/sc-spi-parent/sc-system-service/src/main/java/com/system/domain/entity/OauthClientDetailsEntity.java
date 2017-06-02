@@ -1,6 +1,6 @@
 package com.system.domain.entity;
 
-import java.sql.Timestamp;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,8 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Type;
+import java.sql.Timestamp;
 
 /**
  * Created by maven on 2017/3/30.
@@ -126,7 +125,7 @@ public class OauthClientDetailsEntity {
 
     @Basic
     @Column(name = "additional_information")
-    @Type(type="text")
+    @Type(type = "text")
     public String getAdditionalInformation() {
         return additionalInformation;
     }

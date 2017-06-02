@@ -16,7 +16,6 @@ import java.io.Serializable;
  *
  * @author 半轴
  * @date: 2016年10月20日 下午1:13:21 <br/>
- * @version
  * @since JDK 1.8
  */
 public class Role implements Serializable {

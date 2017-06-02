@@ -16,6 +16,8 @@
 
 package com.safty.boot;
 
+import com.core.base.DefaultSpringbootInitializer;
+import com.core.listenters.SpringHolde;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -23,13 +25,10 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import com.core.base.DefaultSpringbootInitializer;
-import com.core.listenters.SpringHolde;
-
 @EnableEurekaClient
-@ComponentScan(basePackages = {"com.safty.boot.config","com.safty.scheduled"})
+@ComponentScan(basePackages = {"com.safty.boot.config", "com.safty.scheduled"})
 @EnableHystrix
-@Import(value=SpringHolde.class)
+@Import(value = SpringHolde.class)
 public class SaftyApplication extends DefaultSpringbootInitializer {
 
     public static void main(String[] args) throws Exception {

@@ -23,7 +23,7 @@ public class SpringHolde implements ApplicationContextAware {
     }
 
     @SuppressWarnings("static-access")
-	@Override
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.springContext = applicationContext;
     }
@@ -31,9 +31,9 @@ public class SpringHolde implements ApplicationContextAware {
     public static <T> T getBean(Class<T> type) throws BeansException {
         return springContext.getBean(type);
     }
-    
-    public static boolean isInitialization(){
-       return springContext != null;
+
+    public static boolean isInitialization() {
+        return springContext != null;
     }
 
     public static Object getBean(String name) throws BeansException {

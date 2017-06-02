@@ -13,12 +13,12 @@
     <form id="confirmationForm" name="confirmationForm"
           action="../oauth/authorize" method="post">
         <input name="user_oauth_approval" value="true" type="hidden"/>
-         <button class="btn btn-primary" type="submit">Approve</button>
+        <button class="btn btn-primary" type="submit">Approve</button>
     </form>
     <form id="denyForm" name="confirmationForm"
           action="../oauth/authorize" method="post">
         <input name="user_oauth_approval" value="false" type="hidden"/>
-         <button class="btn btn-primary" type="submit">Deny</button>
+        <button class="btn btn-primary" type="submit">Deny</button>
     </form>
 </div>
 </body>
