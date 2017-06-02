@@ -1,4 +1,4 @@
-package com.core.utils;
+package com.core.mybatis;
 
 import java.util.HashMap;
 import java.util.List;

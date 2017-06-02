@@ -1,4 +1,4 @@
-package com.core.utils;
+package com.core.mybatis;
 
 /**
  * Created by pig on 2017/6/1.

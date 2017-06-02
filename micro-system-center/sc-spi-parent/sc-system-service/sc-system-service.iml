@@ -144,6 +144,8 @@
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="common-support" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.39" level="project" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-joda:2.8.3" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.4" level="project" />

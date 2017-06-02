@@ -53,6 +53,7 @@
         <jcommander.version>1.69</jcommander.version>
         <libthrift.version>0.10.0</libthrift.version>
         <zkclient.version>0.1</zkclient.version>
+        <mapper.version>3.4.0</mapper.version>
     </properties>
     <modules>
         <module>micro-system-center</module>
@@ -85,6 +86,12 @@
                 <version>${mybatis-generator-core.version}</version>
                 <scope>compile</scope>
                 <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${mapper.version}</version>
             </dependency>
 
             <dependency>
@@ -303,8 +310,7 @@
                 <spring.cloud.profile>develop</spring.cloud.profile>
                 <eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka
                 </eureka.client.serviceUrl.defaultZone>
-                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4
-                    -XX:SurvivorRatio=4-XX:+UseSerialGC -server
+                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4-XX:+UseSerialGC -server
                 </jvm.arguments>
             </properties>
             <activation>
