@@ -2,6 +2,8 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+        <!--D:\micro\micro-service\micro-system-center\micro-mapper\micro-test-mapper>mvn mybatis-generator:generate -Dmybatis.generator.configurationFile=src/test/resources/mybatis-generatorConfig.xml-->
+
 <!-- Mybatis生成Mapper配置文件 mvn mybatis-generator:generate -Dmybatis.generator.configurationFile=src/test/resources/mybatis-generatorConfig.xml -->
 <generatorConfiguration>
 
@@ -44,10 +46,40 @@
                           type="post"/>
         </table>
 
-        <table tableName="admin_depart" domainObjectName="AdminDepart"
+
+        <table tableName="oauth_resource" domainObjectName="OauthResource"
                delimitIdentifiers="true" delimitAllColumns="true">
-            <generatedKey column="depart_id" sqlStatement="MySql" identity="true" type="post"/>
+            <generatedKey column="resource_id" sqlStatement="MySql" identity="true" type="post"/>
         </table>
+        <table tableName="oauth_client_details" domainObjectName="OauthClientDetails"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="oauth_system" domainObjectName="OauthSystem"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="system_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="oauth_system_resource" domainObjectName="OauthSystemResource"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="oauth_system_resource_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="user_role_resource" domainObjectName="UserRoleResource"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="role_resource_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="user_role_relation" domainObjectName="UserRoleRelation"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="user_role_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="user_base" domainObjectName="UserBase"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="user_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+        <table tableName="user_role" domainObjectName="UserRole"
+               delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="user_id" sqlStatement="MySql" identity="true" type="post"/>
+        </table>
+
 
 
     </context>
