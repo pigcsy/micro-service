@@ -30,8 +30,8 @@ public interface AuthorizationClient {
      * @param staffName
      * @return
      */
-    @RequestMapping(value = "/auth/staff-queryByName", method = RequestMethod.POST)
-    AdminStaffVo getAdminStaff(@RequestParam("code") String staffName);
+    @RequestMapping(value = "/user/queryByUserName", method = RequestMethod.POST)
+    AdminStaffVo queryByUserName(@RequestParam("code") String staffName);
 
     /**
      * 员工角色

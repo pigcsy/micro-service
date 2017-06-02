@@ -7,7 +7,6 @@ import com.system.domain.request.user.UserListRequestDto;
 import com.system.domain.request.user.UserRequestDto;
 import com.system.domain.response.user.UserListResponseDto;
 import com.system.domain.response.user.UserResult;
-import com.system.domain.response.user.UserRoleResponseDto;
 import com.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RefreshScope
@@ -59,18 +56,16 @@ public class UserController extends AbstractController {
         userService.disable(request);
     }
 
-    @RequestMapping(value = "/role-list", method = RequestMethod.POST)
-    @ResponseBody
-    @ResponseJson
-    List<UserRoleResponseDto> userRoleList(@RequestBody DefaultRequestDto request) {
-        return userService.userRoleList(request);
-    }
 
-    @RequestMapping(value = "/role-edit", method = RequestMethod.POST)
-    @ResponseBody
-    @ResponseJson
-    void editUserRole(@RequestBody UserRequestDto request) {
-        userService.editUserRole(request);
+    /**
+     * 根据用户姓名查询用户信息
+     *
+     * @param code
+     * @return
+     */
+    @RequestMapping(value = "/staff-queryByName", method = RequestMethod.POST)
+    UserResult queryByName(String code) {
+        return userService.queryByName(code);
     }
 
 }

@@ -26,6 +26,24 @@ import java.util.regex.Pattern;
 )
 public class CameHumpInterceptor implements Interceptor {
 
+    /**
+     * 将下划线风格替换为驼峰风格
+     *
+     * @param str
+     * @return
+     */
+    public static String underlineToCamelhump(String str) {
+        Matcher matcher = Pattern.compile("_[a-z]").matcher(str);
+        StringBuilder builder = new StringBuilder(str);
+        for (int i = 0; matcher.find(); i++) {
+            builder.replace(matcher.start() - i, matcher.end() - i, matcher.group().substring(1).toUpperCase());
+        }
+        if (Character.isUpperCase(builder.charAt(0))) {
+            builder.replace(0, 1, String.valueOf(Character.toLowerCase(builder.charAt(0))));
+        }
+        return builder.toString();
+    }
+
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         //先执行，后处理
@@ -42,6 +60,7 @@ public class CameHumpInterceptor implements Interceptor {
 
     /**
      * 处理简单对象
+     *
      * @param map
      */
     private void processMap(Map map) {
@@ -57,23 +76,6 @@ public class CameHumpInterceptor implements Interceptor {
             }
         }
         map.putAll(cameHumpMap);
-    }
-
-    /**
-     * 将下划线风格替换为驼峰风格
-     * @param str
-     * @return
-     */
-    public static String underlineToCamelhump(String str) {
-        Matcher matcher = Pattern.compile("_[a-z]").matcher(str);
-        StringBuilder builder = new StringBuilder(str);
-        for (int i = 0; matcher.find(); i++) {
-            builder.replace(matcher.start() - i, matcher.end() - i, matcher.group().substring(1).toUpperCase());
-        }
-        if (Character.isUpperCase(builder.charAt(0))) {
-            builder.replace(0, 1, String.valueOf(Character.toLowerCase(builder.charAt(0))));
-        }
-        return builder.toString();
     }
 
     @Override

@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-        <!--D:\micro\micro-service\micro-system-center\micro-mapper\micro-test-mapper>mvn mybatis-generator:generate -Dmybatis.generator.configurationFile=src/test/resources/mybatis-generatorConfig.xml-->
+<!--D:\micro\micro-service\micro-system-center\micro-mapper\micro-test-mapper>mvn mybatis-generator:generate -Dmybatis.generator.configurationFile=src/test/resources/mybatis-generatorConfig.xml-->
 
 <!-- Mybatis生成Mapper配置文件 mvn mybatis-generator:generate -Dmybatis.generator.configurationFile=src/test/resources/mybatis-generatorConfig.xml -->
 <generatorConfiguration>
@@ -79,7 +79,6 @@
                delimitIdentifiers="true" delimitAllColumns="true">
             <generatedKey column="user_id" sqlStatement="MySql" identity="true" type="post"/>
         </table>
-
 
 
     </context>

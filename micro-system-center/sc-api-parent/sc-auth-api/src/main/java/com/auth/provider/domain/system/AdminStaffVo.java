@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class AdminStaffVo {
-    private Integer staffId;
+    private Integer userId;
     private String code;
     private String pwd;
     private Byte status;
-    private String staffName;
-    private String staffPhone;
+    private String userName;
+    private String userPhone;
     private Integer systemId;
 
     private int dailyAccessNum;

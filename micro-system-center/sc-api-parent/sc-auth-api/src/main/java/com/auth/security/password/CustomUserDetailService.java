@@ -45,7 +45,7 @@ public class CustomUserDetailService implements UserDetailsService {
         ;
         try {
             String clientId = ((Map<String, Object>) authentication.getDetails()).get("client_id").toString();
-            AdminStaffVo staff = authorizationClient.getAdminStaff(username);
+            AdminStaffVo staff = authorizationClient.queryByUserName(username);
             OauthSystemVo oauthSystemVo = authorizationClient.getOauthSystem(clientId);
             if (staff.getSystemId() != oauthSystemVo.getSystemId().intValue()) {
                 throw new LogicException("未找到用户");

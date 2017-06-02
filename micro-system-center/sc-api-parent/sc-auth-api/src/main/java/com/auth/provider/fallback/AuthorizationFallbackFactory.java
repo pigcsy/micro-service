@@ -25,7 +25,7 @@ public class AuthorizationFallbackFactory implements FallbackFactory<Authorizati
             }
 
             @Override
-            public AdminStaffVo getAdminStaff(String userNm) {
+            public AdminStaffVo queryByUserName(String userNm) {
                 if (cause instanceof MicroException) {
                     MicroException exception = (MicroException) cause;
                     throw exception;

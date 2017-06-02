@@ -20,7 +20,6 @@
     <modules>
 
         <module>sc-system-service</module>
-        <module>sc-safty-service</module>
         <module>sc-support-service</module>
     </modules>
 </project>

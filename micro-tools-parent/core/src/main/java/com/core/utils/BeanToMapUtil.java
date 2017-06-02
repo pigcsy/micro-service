@@ -17,29 +17,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ClassName:BeanToMapUtil <br/> 
- * Function: javaBean和map互相转换. <br/> 
- * Reason:   TODO ADD REASON. <br/> 
+ * ClassName:BeanToMapUtil <br/>
+ * Function: javaBean和map互相转换. <br/>
+ * Reason:   TODO ADD REASON. <br/>
+ *
  * @author 轴承
  * @Date: 2016年3月24日 下午1:45:03 <br/>
- * @version
- * @since JDK 1.8
  * @see
+ * @since JDK 1.8
  */
 public class BeanToMapUtil {
     /**
      * 将一个 Map 对象转化为一个 JavaBean
+     *
      * @param type 要转化的类型
-     * @param map 包含属性值的 map
+     * @param map  包含属性值的 map
      * @return 转化出来的 JavaBean 对象
-     * @throws IntrospectionException
-     *             如果分析类属性失败
-     * @throws IllegalAccessException
-     *             如果实例化 JavaBean 失败
-     * @throws InstantiationException
-     *             如果实例化 JavaBean 失败
-     * @throws InvocationTargetException
-     *             如果调用属性的 setter 方法失败
+     * @throws IntrospectionException    如果分析类属性失败
+     * @throws IllegalAccessException    如果实例化 JavaBean 失败
+     * @throws InstantiationException    如果实例化 JavaBean 失败
+     * @throws InvocationTargetException 如果调用属性的 setter 方法失败
      */
     public static Object convertMap(Class<?> type, Map<?, ?> map)
             throws IntrospectionException, IllegalAccessException,
@@ -68,10 +65,11 @@ public class BeanToMapUtil {
 
     /**
      * 将一个 JavaBean 对象转化为一个  Map
+     *
      * @param bean 要转化的JavaBean 对象
      * @return 转化出来的  Map 对象
-     * @throws IntrospectionException 如果分析类属性失败
-     * @throws IllegalAccessException 如果实例化 JavaBean 失败
+     * @throws IntrospectionException    如果分析类属性失败
+     * @throws IllegalAccessException    如果实例化 JavaBean 失败
      * @throws InvocationTargetException 如果调用属性的 setter 方法失败
      */
     public static Map<String, Object> convertBean(Object bean)

@@ -2,8 +2,9 @@ package com.mapper.generate;
 
 import com.entity.UserBase;
 import com.entity.UserBaseExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserBaseMapper {
     /**

@@ -19,7 +19,6 @@
     <modules>
         <module>sc-system-api</module>
         <module>sc-auth-api</module>
-        <module>sc-safty-api</module>
     </modules>
 
 </project>

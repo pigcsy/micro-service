@@ -85,12 +85,12 @@ public class CustomPasswordAuthenticationProvider extends AbstractUserDetailsAut
     protected Authentication createSuccessAuthentication(Object principal, Authentication authentication,
                                                          UserDetails user) {
         String clientId = ((Map<String, Object>) authentication.getDetails()).get("client_id").toString();
-        AdminStaffVo staff = authorizationClient.getAdminStaff(user.getUsername());
-        List<String> authoritys = authorizationClient.getStaffAuthority(staff.getStaffId());
+        AdminStaffVo systemUser = authorizationClient.queryByUserName(user.getUsername());
+        List<String> authoritys = authorizationClient.getStaffAuthority(systemUser.getUserId());
         OauthSystemVo oauthSystemVo = authorizationClient.getOauthSystem(clientId);
 
-        DefaultCurrentPrincipal currentUser = new DefaultCurrentPrincipal(staff.getStaffId(), staff.getStaffName(),
-                staff.getSystemId(), oauthSystemVo.getSystemType(), staff.getDailyAccessNum(), staff.getMinuteAccessNum());
+        DefaultCurrentPrincipal currentUser = new DefaultCurrentPrincipal(systemUser.getUserId(), systemUser.getUserName(),
+                systemUser.getSystemId(), oauthSystemVo.getSystemType(), systemUser.getDailyAccessNum(), systemUser.getMinuteAccessNum());
         SystemEn systemEn = SystemEn.toEnum(oauthSystemVo.getSystemType());
         List<GrantedAuthority> authorityList = authoritys.stream()
                 .map(authority -> new SimpleGrantedAuthority(systemEn.getRolePrefix() + authority))

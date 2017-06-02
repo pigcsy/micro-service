@@ -10,7 +10,7 @@ import lombok.Data;
  * @date 2017/4/21 上午9:41
  */
 @Data
-public class AccessRequest extends BaseRequest {
+public class AccessRequestDto extends BaseRequest {
     private static final long serialVersionUID = -8408111140226606516L;
     private String gateway;
     private String customerId;

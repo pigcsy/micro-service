@@ -4,7 +4,7 @@ import com.common.support.enums.SystemEn;
 import com.core.base.AbstractController;
 import com.core.constants.AppConstant;
 import com.core.utils.Assert;
-import com.support.domain.request.AccessRequest;
+import com.support.domain.request.AccessRequestDto;
 import com.support.manager.AccessManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -33,7 +33,7 @@ public class AccessController extends AbstractController {
      * @return
      */
     @RequestMapping(value = "/check", method = RequestMethod.POST)
-    public String checkAccessLimit(@RequestBody AccessRequest request) {
+    public String checkAccessLimit(@RequestBody AccessRequestDto request) {
         Assert.notBlank(request.getGateway(), "gateway is must not be blank");
         Assert.notBlank(request.getCustomerId(), "customer is must not be blank");
         Assert.notNull(request.getSystemCode(), "system is must not be null");
@@ -50,7 +50,7 @@ public class AccessController extends AbstractController {
      * @return
      */
     @RequestMapping(value = "/increment", method = RequestMethod.POST)
-    public String increment(@RequestBody AccessRequest request) {
+    public String increment(@RequestBody AccessRequestDto request) {
         Assert.notBlank(request.getGateway(), "gateway is must not be blank");
         Assert.notBlank(request.getCustomerId(), "customer is must not be blank");
         Assert.notNull(request.getSystemCode(), "system is must not be null");

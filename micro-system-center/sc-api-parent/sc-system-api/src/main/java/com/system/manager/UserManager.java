@@ -9,7 +9,6 @@ import com.system.domain.request.user.UserListRequestVo;
 import com.system.domain.request.user.UserRequestVo;
 import com.system.domain.response.user.UserListResponseVo;
 import com.system.domain.response.user.UserResult;
-import com.system.domain.response.user.UserRoleResponseVo;
 import com.system.provider.client.SystemUserClient;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Component;
 
 import java.net.URLDecoder;
 import java.util.Date;
-import java.util.List;
 
 @Component
 public class UserManager extends AbstractManager {
@@ -82,22 +80,5 @@ public class UserManager extends AbstractManager {
         systemUserClient.userDisable(request);
     }
 
-    /**
-     * 用户角色列表 userDisable:(这里用一句话描述这个方法的作用). <br/>
-     *
-     * @author maven
-     */
-    public List<UserRoleResponseVo> userRoleList(DefaultRequestVo request) {
-        return systemUserClient.userRoleList(request);
-    }
-
-    /**
-     * 用户角色列表 userDisable:(这里用一句话描述这个方法的作用). <br/>
-     *
-     * @author maven
-     */
-    public void editUserRole(UserRequestVo request) {
-        systemUserClient.editUserRole(request);
-    }
 
 }

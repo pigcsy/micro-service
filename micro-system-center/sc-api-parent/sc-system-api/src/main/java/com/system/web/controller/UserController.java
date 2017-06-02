@@ -6,7 +6,6 @@ import com.system.domain.request.user.UserListRequestVo;
 import com.system.domain.request.user.UserRequestVo;
 import com.system.domain.response.user.UserListResponseVo;
 import com.system.domain.response.user.UserResult;
-import com.system.domain.response.user.UserRoleResponseVo;
 import com.system.manager.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -16,8 +15,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -84,28 +81,5 @@ public class UserController extends AbstractController {
         userManager.userDisable(request);
     }
 
-    /**
-     * getStaffRoleList:(用户角色列表查询). <br/>
-     *
-     * @author maven
-     */
-    @RequestMapping(value = "/role-list", method = RequestMethod.POST)
-    public List<UserRoleResponseVo> userRoleList(DefaultRequestVo request) {
-        return userManager.userRoleList(request);
-    }
-
-    /**
-     * editStaffRole:(设置用户角色). <br/>
-     * TODO(这里描述这个方法适用条件 – 可选).<br/>
-     * TODO(这里描述这个方法的执行流程 – 可选).<br/>
-     * TODO(这里描述这个方法的使用方法 – 可选).<br/>
-     * TODO(这里描述这个方法的注意事项 – 可选).<br/>
-     *
-     * @author maven
-     */
-    @RequestMapping(value = "/role-edit", method = RequestMethod.POST)
-    public void editStaffRole(@Validated(UserRequestVo.AdminStaffDetail.class) UserRequestVo request, BindingResult result) {
-        userManager.editUserRole(request);
-    }
 
 }

@@ -16,8 +16,6 @@
         <module name="mq-support" />
         <module name="registry-server" />
         <module name="sc-auth-api" />
-        <module name="sc-safty-api" />
-        <module name="sc-safty-service" />
         <module name="sc-support-service" />
         <module name="sc-system-api" />
         <module name="sc-system-gateway" />

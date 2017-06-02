@@ -10,6 +10,6 @@ import java.io.Serializable;
 /**
  * 继承自己的 BaseMapper
  */
-public interface BaseMapper<T extends Serializable> extends Mapper<T>,MySqlMapper,ConditionMapper, IdsMapper {
+public interface BaseMapper<T extends Serializable> extends Mapper<T>, MySqlMapper, ConditionMapper, IdsMapper {
 
 }

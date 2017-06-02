@@ -116,7 +116,7 @@ public class AdminDepartEntity {
     // @JoinColumn(name = "depart_id", nullable = false)
     // private AdminStaffEntity adminStaffEntity=new AdminStaffEntity();
     //
-    // public AdminStaffEntity getAdminStaffEntity() {
+    // public AdminStaffEntity queryByUserNameEntity() {
     //     return adminStaffEntity;
     // }
     //

@@ -2,8 +2,9 @@ package com.mapper.generate;
 
 import com.entity.OauthClientDetails;
 import com.entity.OauthClientDetailsExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface OauthClientDetailsMapper {
     /**
