@@ -6,7 +6,7 @@ package com.common.support.enums;
  * @author Administrator
  */
 public enum SystemEn {
-    ADMIN(1, "员工", "AD_"), PLATFORM(2, "平台", "PF_"), MICRO_USER(3, "车蚂蚁用户", "MICRO_U_"), TOURIST(90, "游客", "T_");
+    ADMIN(1, "员工", "AD_"), PLATFORM(2, "平台", "PF_"), MICRO_USER(3, "用户", "MICRO_U_"), TOURIST(90, "游客", "T_");
     private int code;
     private String mean;
     // 对应角色前缀

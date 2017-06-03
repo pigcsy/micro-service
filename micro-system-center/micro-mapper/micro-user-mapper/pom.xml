@@ -6,10 +6,10 @@
         <artifactId>micro-mapper</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>micro-test-mapper</artifactId>
+    <artifactId>micro-user-mapper</artifactId>
     <version>1.0.0.SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>micro-test-mapper</name>
+    <name>micro-user-mapper</name>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

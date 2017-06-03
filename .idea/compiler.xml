@@ -12,6 +12,7 @@
         <module name="config-server" />
         <module name="core" />
         <module name="micro-test-mapper" />
+        <module name="micro-user-mapper" />
         <module name="monitor-server" />
         <module name="mq-support" />
         <module name="registry-server" />
@@ -51,6 +52,7 @@
       <module name="micro-system-center" target="1.8" />
       <module name="micro-test-mapper" target="1.8" />
       <module name="micro-tools-parent" target="1.8" />
+      <module name="micro-user-mapper" target="1.8" />
       <module name="monitor-server" target="1.8" />
       <module name="mq-support" target="1.8" />
       <module name="registry-server" target="1.8" />

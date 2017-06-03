@@ -9,13 +9,11 @@
     <file url="file://$PROJECT_DIR$/micro-common-parent/zipkin-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/micro-mapper" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/micro-system-center/micro-mapper/micro-test-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/micro-system-center/micro-mapper/micro-user-mapper" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-api-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-auth-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-safty-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-system-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-safty-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-support-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-system-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-system-center/sc-system-gateway" charset="UTF-8" />

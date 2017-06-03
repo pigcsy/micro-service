@@ -57,8 +57,7 @@ public class AccessFilter extends ZuulFilter {
         request.setAttribute("req_time", System.currentTimeMillis());
         // 已授权
         if (hasAuthorized()) {
-            ctx.addZuulRequestHeader(HttpConstant.INTERNAL_AUTHORIZATION,
-                    authorizationConverter.serializePrincipal(getPrincipal()));
+            ctx.addZuulRequestHeader(HttpConstant.INTERNAL_AUTHORIZATION, authorizationConverter.serializePrincipal(getPrincipal()));
         }
 
         checkLimit();

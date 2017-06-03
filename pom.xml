@@ -271,11 +271,8 @@
             <id>develop</id>
             <properties>
                 <spring.cloud.profile>develop</spring.cloud.profile>
-                <eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka
-                </eureka.client.serviceUrl.defaultZone>
-                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4
-                    -XX:SurvivorRatio=4-XX:+UseSerialGC -server
-                </jvm.arguments>
+                <eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka</eureka.client.serviceUrl.defaultZone>
+                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4-XX:SurvivorRatio=4-XX:+UseSerialGC -server</jvm.arguments>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -285,14 +282,10 @@
             <id>test</id>
             <properties>
                 <spring.cloud.profile>test</spring.cloud.profile>
-                <eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka
-                </eureka.client.serviceUrl.defaultZone>
+                <eureka.client.serviceUrl.defaultZone>http://localhost:7070/eureka</eureka.client.serviceUrl.defaultZone>
                 <!-- -Xms128m -Xmx512m -XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MetaspaceSize=24m
                     -XX:MaxMetaspaceSize=64m -XX:+UseSerialGC -server -->
-                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4
-                    -XX:SurvivorRatio=4
-                </jvm.arguments>
-
+                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4-XX:SurvivorRatio=4</jvm.arguments>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -302,23 +295,16 @@
             <id>pre</id>
             <properties>
                 <spring.cloud.profile>pre</spring.cloud.profile>
-                <eureka.client.serviceUrl.defaultZone>http://10.27.89.93:7070/eureka
-                </eureka.client.serviceUrl.defaultZone>
-                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4
-                    -XX:SurvivorRatio=4
-                </jvm.arguments>
+                <eureka.client.serviceUrl.defaultZone>http://10.27.89.93:7070/eureka</eureka.client.serviceUrl.defaultZone>
+                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms128m -Xmx512m -XX:NewRatio=4-XX:SurvivorRatio=4</jvm.arguments>
             </properties>
         </profile>
         <profile>
             <id>product</id>
             <properties>
                 <spring.cloud.profile>product</spring.cloud.profile>
-                <eureka.client.serviceUrl.defaultZone>
-                    http://ip:port/eureka,http://ip:port/eureka,http://ip:port/eureka
-                </eureka.client.serviceUrl.defaultZone>
-                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms512m -Xmx512m -XX:NewRatio=4
-                    -XX:SurvivorRatio=4
-                </jvm.arguments>
+                <eureka.client.serviceUrl.defaultZone>http://ip:port/eureka,http://ip:port/eureka,http://ip:port/eureka</eureka.client.serviceUrl.defaultZone>
+                <jvm.arguments>-Djava.security.egd=file:/dev/./urandom -Xms512m -Xmx512m -XX:NewRatio=4-XX:SurvivorRatio=4</jvm.arguments>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -337,7 +323,7 @@
                     <artifactId>maven-antrun-plugin</artifactId>
                     <executions>
                         <execution>
-                            <id>gen-webadmin</id>
+                            <id>gen-web</id>
                             <phase>compile</phase>
                             <configuration>
                                 <tasks>

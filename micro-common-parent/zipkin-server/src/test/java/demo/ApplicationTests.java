@@ -36,7 +36,7 @@ public class ApplicationTests {
     public static void main(String[] args) throws ClientProtocolException, IOException {
         HttpClientBuilder builder = HttpClientBuilder.create();
 //		HttpPost post = new HttpPost("http://localhost:8088/refresh");
-        HttpPost post = new HttpPost("http://localhost:8888/bus/refresh");
+        HttpPost post = new HttpPost("http://localhost:7077/bus/refresh");
         CloseableHttpResponse response = builder.build().execute(post);
         System.out.println(EntityUtils.toString(response.getEntity()));
     }

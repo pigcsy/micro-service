@@ -17,6 +17,6 @@
     </distributionManagement>
 
     <modules>
-        <module>micro-test-mapper</module>
+        <module>micro-user-mapper</module>
     </modules>
 </project>
