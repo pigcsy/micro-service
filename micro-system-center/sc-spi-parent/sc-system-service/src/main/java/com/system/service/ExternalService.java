@@ -44,9 +44,6 @@ import java.util.List;
 public class ExternalService extends BaseService {
 
 
-
-
-
     /**
      * 用户列表 list:(这里用一句话描述这个方法的作用). <br/>
      *
@@ -178,7 +175,7 @@ public class ExternalService extends BaseService {
         //         return false;
         //     }
         // }
-         return true;
+        return true;
     }
 
     /**
