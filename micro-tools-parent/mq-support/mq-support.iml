@@ -205,7 +205,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.3.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-client:9.3.4.RC1" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-client:9.4.0.M1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.3.11.v20160721" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.3.11.v20160721" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.3.11.v20160721" level="project" />
