@@ -37,6 +37,7 @@ public class ApplicationTests {
         HttpClientBuilder builder = HttpClientBuilder.create();
 //		HttpPost post = new HttpPost("http://localhost:8088/refresh");
         HttpPost post = new HttpPost("http://localhost:7077/bus/refresh");
+
         CloseableHttpResponse response = builder.build().execute(post);
         System.out.println(EntityUtils.toString(response.getEntity()));
     }
