@@ -93,24 +93,6 @@ public class ResponseFilter extends SendResponseFilter {
 
                 context.setResponseBody(JSON.toJSONString(new DefaultResult(exception.getMessage(), exception.getErrorCode())));
             }
-//
-//			if(statusEn == HttpStatus.OK){
-//				preSetHeader(context);// 非500异常需设置头部json响应
-//				context.setResponseBody(JSON.toJSONString(new DefaultResult(tryParseResult(result))));
-//				return null;
-//			}
-//			context.setResponseStatusCode(statusEn.value());
-//			if(statusEn != HttpStatus.OK) {
-//				preSetHeader(context);// 非500异常需设置头部json响应
-//			Exception exception = HttpErrorDecoder.decode(HttpStatus.INTERNAL_SERVER_ERROR, result);
-//				context.setResponseBody(JSON.toJSONString(new DefaultResult(exception.getMessage(), exception.getErrorCode())));
-//				return null;
-//			} else {
-//				preSetHeader(context);// 非500异常需设置头部json响应
-//				cleanResponse(context);
-//				context.setResponseBody(JSON.toJSONString(new DefaultResult("网关错误", String.valueOf(HttpStatus.BAD_GATEWAY))));
-//				return null;
-//			}
         } catch (IOException e) {
             context.setResponseBody(JSON.toJSONString(new DefaultResult("未知错误", CodeTemp.UNKNOW.getCode())));
         } finally {
