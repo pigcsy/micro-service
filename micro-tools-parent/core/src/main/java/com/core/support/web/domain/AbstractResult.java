@@ -1,7 +1,7 @@
 /**
- * Project Name:mspjcore
+ * Project Name:core
  * File Name:AbstractResult.java
- * Package Name:com.mspj.framework.core.domain
+ * Package Name:com..framework.core.domain
  * Date:2016年6月3日下午4:51:35
  * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
  */

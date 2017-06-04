@@ -1,7 +1,7 @@
 /**
- * Project Name:mspj-shop-api
+ * Project Name:-shop-api
  * File Name:Token.java
- * Package Name:com.mspj.shop.api.authentication
+ * Package Name:com..shop.api.authentication
  * Date:2016年6月1日下午1:31:30
  * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
  */

@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/micro-system-center/micro-mapper/micro-mapper.iml" filepath="$PROJECT_DIR$/micro-system-center/micro-mapper/micro-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/micro-service.iml" filepath="$PROJECT_DIR$/.idea/micro-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-system-center/micro-system-center.iml" filepath="$PROJECT_DIR$/micro-system-center/micro-system-center.iml" />
-      <module fileurl="file://D:\demo\micro-service\micro-system-center\micro-mapper\micro-user-mapper\micro-test-mapper.iml" filepath="D:\demo\micro-service\micro-system-center\micro-mapper\micro-user-mapper\micro-test-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/micro-tools-parent.iml" filepath="$PROJECT_DIR$/micro-tools-parent/micro-tools-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-system-center/micro-mapper/micro-user-mapper/micro-user-mapper.iml" filepath="$PROJECT_DIR$/micro-system-center/micro-mapper/micro-user-mapper/micro-user-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-common-parent/monitor-server/monitor-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/monitor-server/monitor-server.iml" />

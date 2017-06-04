@@ -1,7 +1,7 @@
 /**
- * Project Name:mspj-shop-api
+ * Project Name:-shop-api
  * File Name:IllegalParamsException.java
- * Package Name:com.mspj.shop.api.common.exception
+ * Package Name:com..shop.api.common.exception
  * Date:2016年5月31日上午10:38:25
  * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
  */
