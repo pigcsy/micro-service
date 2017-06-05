@@ -64,11 +64,6 @@ public class LoghubAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         String accessKeyId = environment.getProperty("aliyun.log.accessKeyId");
         String accessKey = environment.getProperty("aliyun.log.accessKey");
         projectConfig = new ProjectConfig(projectName, endpoint, accessKeyId, accessKey);
-        // Map<String, Object> propertys = new
-        // RelaxedPropertyResolver(environment,
-        // "aliyun.log").getSubProperties(".");
-        // new RelaxedDataBinder(projectConfig).bind(new
-        // MutablePropertyValues(propertys));
         producer = new LogProducer(config);
         producer.setProjectConfig(projectConfig);
     }
