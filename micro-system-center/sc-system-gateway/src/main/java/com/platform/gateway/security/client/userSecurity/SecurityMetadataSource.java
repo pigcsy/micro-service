@@ -1,4 +1,4 @@
-package com.platform.gateway.security;
+package com.platform.gateway.security.client.userSecurity;
 
 import com.alibaba.fastjson.JSON;
 import com.cache.support.redis.RedisCacheManager;

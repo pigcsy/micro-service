@@ -1,4 +1,4 @@
-package com.platform.gateway.security.client.password;
+package com.platform.gateway.security.client.userOauth;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;

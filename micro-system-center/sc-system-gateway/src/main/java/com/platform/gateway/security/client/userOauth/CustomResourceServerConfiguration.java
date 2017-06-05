@@ -1,8 +1,10 @@
-package com.platform.gateway.security;
+package com.platform.gateway.security.client.userOauth;
 
 import com.core.support.security.DefaultResourceServerConfiguration;
 import com.core.support.security.ExceptionRenderer;
 import com.core.support.security.MicroAuthenticationEntryPoint;
+import com.platform.gateway.security.client.userOauth.Oauth2ClientConfig;
+import com.platform.gateway.security.client.userSecurity.SecurityInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.platform.gateway.security.client.password;
+package com.platform.gateway.security.client.userOauth;
 
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.shade.com.alibaba.fastjson.JSON;
 import com.core.exception.MicroAuthorizationException;

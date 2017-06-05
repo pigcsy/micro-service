@@ -1,7 +1,8 @@
 package com.platform.gateway.security;
 
-import com.platform.gateway.security.client.password.CustomOAuth2ClientAuthenticationProcessingFilter;
-import com.platform.gateway.security.client.password.CustomPasswordRestTemplateFactory;
+import com.platform.gateway.security.client.userOauth.CustomOAuth2ClientAuthenticationProcessingFilter;
+import com.platform.gateway.security.client.userOauth.CustomPasswordRestTemplateFactory;
+import com.platform.gateway.security.client.userSecurity.SecurityInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.ManagementServerProperties;
 import org.springframework.context.ApplicationContext;

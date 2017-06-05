@@ -1,4 +1,4 @@
-package com.platform.gateway.security;
+package com.platform.gateway.security.client.userOauth;
 
 import com.google.common.collect.Lists;
 import lombok.Data;

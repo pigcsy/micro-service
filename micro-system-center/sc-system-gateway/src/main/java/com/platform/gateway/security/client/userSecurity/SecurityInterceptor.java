@@ -1,4 +1,4 @@
-package com.platform.gateway.security;
+package com.platform.gateway.security.client.userSecurity;
 
 import com.core.support.security.MicroAccessDecisionManager;
 import org.springframework.beans.factory.annotation.Autowired;
