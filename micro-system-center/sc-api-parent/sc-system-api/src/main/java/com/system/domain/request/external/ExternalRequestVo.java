@@ -1,4 +1,10 @@
+package com.system.domain.request.external;
+
+import com.core.support.web.domain.BaseRequest;
 import lombok.Data;
+
+import java.util.Date;
+
 
 /**
 
@@ -28,6 +34,6 @@ public class ExternalRequestVo extends BaseRequest {
     private String scope;
     private Double accessTokenValidity;
     private Double refreshTokenValidity;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Date createTime;
+    private Date updateTime;
 }
