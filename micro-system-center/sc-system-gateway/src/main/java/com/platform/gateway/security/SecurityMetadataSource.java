@@ -38,9 +38,6 @@ public class SecurityMetadataSource implements FilterInvocationSecurityMetadataS
     @PostConstruct
     public void init() {
         List<MetaDataSource> list = null;
-//		list = Lists.newArrayList(new MetaDataSource("a", 1, com.google.common.collect.Lists.newArrayList("/", "/aa/")));
-//		list.add(new MetaDataSource("b", 2, Lists.newArrayList("/a", "/aa/")));
-
         String cacheReource = cacheManager.get(RedisKeyTemplate.AUTHORIZATION_METADATA_SOURCE.getRedisKey());
         if (StringUtils.isBlank(cacheReource)) {
             //拦截所有请求，无权访问
@@ -84,7 +81,6 @@ public class SecurityMetadataSource implements FilterInvocationSecurityMetadataS
 
     @Override
     public boolean supports(Class<?> clazz) {
-        // FilterInvocationSecurityMetadataSource
         return true;
     }
 
