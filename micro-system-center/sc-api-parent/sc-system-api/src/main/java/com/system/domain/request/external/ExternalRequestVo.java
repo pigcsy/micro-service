@@ -13,7 +13,6 @@ package com.system.domain.request.external;
 import com.core.support.web.domain.BaseRequest;
 import lombok.Data;
 
-import java.sql.Timestamp;
 
 /**
  * ClassName: AdminStaffRequest <br/>
