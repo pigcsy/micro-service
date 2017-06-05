@@ -24,10 +24,5 @@ public class Oauth2ClientConfig {
         params.put("client_secret", Lists.newArrayList(clientSecret));
         return params;
     }
-// 	public static void main(String[] args) {
-// 		String a = URLEncoder.encode("a/b");
-// 		System.err.println(a);
-// //		System.err.println(URLDecoder.decode(a));
-// 	}
 
 }
