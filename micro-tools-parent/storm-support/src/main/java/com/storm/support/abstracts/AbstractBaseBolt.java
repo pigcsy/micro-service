@@ -9,9 +9,6 @@ import org.springframework.context.ApplicationContext;
 
 import java.util.Map;
 
-/**
- * @author zql
- */
 public abstract class AbstractBaseBolt extends BaseBasicBolt {
 
     private static final long serialVersionUID = -1896254821616492317L;
