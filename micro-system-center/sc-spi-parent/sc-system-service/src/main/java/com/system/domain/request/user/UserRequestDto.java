@@ -2,6 +2,7 @@ package com.system.domain.request.user;
 
 import com.core.support.web.domain.BaseRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
@@ -14,6 +15,7 @@ import java.util.Date;
  * @date: 2016年10月26日 下午8:14:22 <br/>
  * @since JDK 1.8
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserRequestDto extends BaseRequest {
 

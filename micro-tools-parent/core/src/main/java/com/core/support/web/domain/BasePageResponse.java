@@ -1,10 +1,12 @@
 package com.core.support.web.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class BasePageResponse<T> extends BaseResponse {
 

@@ -3,9 +3,11 @@ package com.core.support.web.domain;
 
 import com.core.constants.AppConstant;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 public class BasePageRequest extends BaseRequest {

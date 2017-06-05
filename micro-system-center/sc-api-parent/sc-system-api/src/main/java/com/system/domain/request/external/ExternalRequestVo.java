@@ -2,6 +2,7 @@ package com.system.domain.request.external;
 
 import com.core.support.web.domain.BaseRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
@@ -21,6 +22,7 @@ import java.util.Date;
  * @author maven
  * @since JDK 1.8
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class ExternalRequestVo extends BaseRequest {
     private Integer systemId;

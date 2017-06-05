@@ -5,6 +5,7 @@ package com.system.domain.request.user;/**
 import com.core.support.web.domain.BasePageRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -34,6 +35,7 @@ import lombok.NoArgsConstructor;
  *                                                                                             佛祖开光         永无BUG
  *                                                                                 </pre>
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

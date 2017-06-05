@@ -1,7 +1,9 @@
 package com.core.support.web.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class ExportResponse extends BaseResponse {
     private String url;
