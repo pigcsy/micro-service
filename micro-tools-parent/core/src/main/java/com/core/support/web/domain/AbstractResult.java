@@ -2,8 +2,7 @@
  * Project Name:core
  * File Name:AbstractResult.java
  * Package Name:com..framework.core.domain
- * Date:2016年6月3日下午4:51:35
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
+ * Copyright (c) 2016,
  */
 package com.core.support.web.domain;
 
@@ -14,7 +13,7 @@ import lombok.Data;
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON(可选). <br/>
  *
- * @author 半轴
+ * @author
  * @date: 2016年6月3日 下午4:51:35 <br/>
  * @since JDK 1.8
  */

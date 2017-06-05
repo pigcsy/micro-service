@@ -1,10 +1,4 @@
-/**
- * Project Name:saas-authentication
- * File Name:MenuFormat.java
- * Package Name:com.saas.authentication.support
- * Date:2016年10月19日下午8:44:19
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.core.utils;
 
 import com.core.constants.enums.AuthResourcesEnums;
@@ -18,15 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * ClassName: MenuFormat <br/>
- * Function: TODO ADD FUNCTION. <br/>
- * Reason: TODO ADD REASON(可选). <br/>
- *
- * @author 半轴
- * @date: 2016年10月19日 下午8:44:19 <br/>
- * @since JDK 1.8
- */
+
 public class MenuUtils {
 
     /**

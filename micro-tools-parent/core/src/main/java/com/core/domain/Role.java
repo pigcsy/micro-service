@@ -1,10 +1,4 @@
-/**
- * Project Name:saas-authentication
- * File Name:Role.java
- * Package Name:com.saas.authentication.domain
- * Date:2016年10月20日下午1:13:21
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.core.domain;
 
 import java.io.Serializable;
@@ -14,7 +8,7 @@ import java.io.Serializable;
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON(可选). <br/>
  *
- * @author 半轴
+ * @author
  * @date: 2016年10月20日 下午1:13:21 <br/>
  * @since JDK 1.8
  */

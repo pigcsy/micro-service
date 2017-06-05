@@ -1,21 +1,7 @@
-/**
- * Project Name:-shop-api
- * File Name:IllegalRequestException.java
- * Package Name:com..shop.api.common.exception
- * Date:2016年5月31日上午10:39:22
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.core.exception;
 
-/**
- * ClassName: IllegalRequestException <br/>
- * Function: TODO ADD FUNCTION. <br/>
- * Reason: TODO ADD REASON(可选). <br/>
- *
- * @author 半轴
- * @date: 2016年5月31日 上午10:39:22 <br/>
- * @since JDK 1.8
- */
+
 public class UnPermissionException extends MicroException {
 
     public UnPermissionException(String message, Throwable cause) {

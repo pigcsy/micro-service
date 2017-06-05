@@ -1,24 +1,10 @@
-/**
- * Project Name:-shop-api
- * File Name:ErrorCode.java
- * Package Name:com..shop.api.common.exception
- * Date:2016年5月31日下午4:21:24
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.core.exception;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * ClassName: ErrorCode <br/>
- * Function: TODO ADD FUNCTION. <br/>
- * Reason: TODO ADD REASON(可选). <br/>
- *
- * @author 半轴
- * @date: 2016年5月31日 下午4:21:24 <br/>
- * @since JDK 1.8
- */
+
 public class ErrorHolder {
 
     public static String getCode(CodeTemp templ) {
@@ -49,9 +35,8 @@ public class ErrorHolder {
      * 错误编码， 系统级别 10001开始
      * 逻辑级别20001开始
      *
-     * @author 半轴
+     * @author
      * @version ErrorCode
-     * @date: 2016年5月31日 下午4:31:33 <br/>
      * @since JDK 1.8
      */
     public enum CodeTemp {

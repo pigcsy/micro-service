@@ -8,15 +8,7 @@ import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
 
-/**
- * ClassName: ApiResult <br/>
- * Function: TODO ADD FUNCTION. <br/>
- * Reason: TODO ADD REASON(可选). <br/>
- *
- * @author 半轴
- * @date: 2016年5月31日 下午12:44:20 <br/>
- * @since JDK 1.8
- */
+
 @Data
 public class ErrorResult implements Serializable {
 

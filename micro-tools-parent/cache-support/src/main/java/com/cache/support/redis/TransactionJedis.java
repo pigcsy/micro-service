@@ -1,10 +1,4 @@
-/**
- * Project Name:core
- * File Name:TransactionJedis.java
- * Package Name:com..framework.core.utils
- * Date:2016年7月20日上午11:51:48
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.cache.support.redis;
 
 import com.core.exception.LogicException;

@@ -195,7 +195,7 @@ public class WebUtils {
      *
      * @param request
      * @return
-     * @author 半轴
+     * @author
      * @date: 2016年8月4日 上午10:04:20
      */
     public static String getRequestParams(HttpServletRequest request) {

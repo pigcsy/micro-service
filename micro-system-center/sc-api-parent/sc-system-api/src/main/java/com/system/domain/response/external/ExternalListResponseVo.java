@@ -1,10 +1,4 @@
-/**
- * Project Name:saas-pc-api
- * File Name:LoginResponse.java
- * Package Name:com.saas.pc.domain.response
- * Date:2016年10月18日下午5:01:12
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.system.domain.response.external;
 
 

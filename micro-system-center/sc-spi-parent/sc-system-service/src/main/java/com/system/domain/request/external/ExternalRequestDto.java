@@ -1,10 +1,4 @@
-/**
- * Project Name:saas-admin-api
- * File Name:LoginRequest.java
- * Package Name:com.saas.admin.domain.request
- * Date:2016年10月19日下午1:40:42
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.system.domain.request.external;
 
 import com.core.support.web.domain.BaseRequest;

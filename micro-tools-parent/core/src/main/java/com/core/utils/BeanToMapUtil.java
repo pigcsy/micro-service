@@ -1,10 +1,4 @@
-/**
- * Project Name:api
- * File Name:BeanToMapUtil.java
- * Package Name:com..frame.core.utils
- * Date:2016年3月24日下午1:45:03
- * Copyright (c) 2016, 蚂上配件 Ltd. All Rights Reserved.
- */
+
 package com.core.utils;
 
 import java.beans.BeanInfo;
