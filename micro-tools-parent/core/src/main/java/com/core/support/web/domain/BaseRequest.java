@@ -1,4 +1,3 @@
-
 package com.core.support.web.domain;
 
 import com.alibaba.fastjson.JSON;

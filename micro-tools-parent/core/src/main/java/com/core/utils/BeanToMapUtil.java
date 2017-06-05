@@ -1,4 +1,3 @@
-
 package com.core.utils;
 
 import java.beans.BeanInfo;

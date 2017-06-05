@@ -1,4 +1,3 @@
-
 package com.system.domain.request.user;
 
 import com.core.support.web.domain.BaseRequest;

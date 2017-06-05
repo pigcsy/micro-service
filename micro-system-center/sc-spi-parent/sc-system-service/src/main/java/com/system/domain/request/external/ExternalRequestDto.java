@@ -1,4 +1,3 @@
-
 package com.system.domain.request.external;
 
 import com.core.support.web.domain.BaseRequest;

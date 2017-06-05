@@ -7,14 +7,13 @@ import java.util.Date;
 
 
 /**
-
-package com.system.domain.request.external;
-
-import com.core.support.web.domain.BaseRequest;
-import lombok.Data;
-
-
-/**
+ * package com.system.domain.request.external;
+ * <p>
+ * import com.core.support.web.domain.BaseRequest;
+ * import lombok.Data;
+ * <p>
+ * <p>
+ * /**
  * ClassName: AdminStaffRequest <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON(可选). <br/>

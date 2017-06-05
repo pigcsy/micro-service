@@ -1,4 +1,3 @@
-
 package com.core.domain;
 
 import java.io.Serializable;
