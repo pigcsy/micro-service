@@ -30,7 +30,7 @@ public class DefaultHttpAccessAspect {
     /*
      * 定义一个切入点
      */
-    @Pointcut("execution(* com.cmy.*.web.controller..*.*(..))")
+    @Pointcut("execution(* com.*.web.controller..*.*(..))")
     public void point() {
 
     }

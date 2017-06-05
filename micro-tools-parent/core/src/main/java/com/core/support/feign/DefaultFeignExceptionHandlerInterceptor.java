@@ -30,7 +30,7 @@ public class DefaultFeignExceptionHandlerInterceptor {
     /*
      * 定义一个切入点
      */
-    @Pointcut("execution(* com.cmy.*.provider.client..*.*(..))")
+    @Pointcut("execution(* com.*.provider.client..*.*(..))")
     public void point() {
 
     }
