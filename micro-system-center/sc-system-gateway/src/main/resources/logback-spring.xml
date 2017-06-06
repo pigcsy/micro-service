@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration debug="true">
-    <include resource="core\src\main\java\com\core\logback\default.xml"/>
-</configuration>
-
 <!--<configuration debug="true">-->
-    <!--&lt;!&ndash;定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 &ndash;&gt;-->
-    <!--<include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
-    <!--<springProperty scope="context" name="LOG_LEVEL" source="log.level.root" />-->
-    <!--<springProperty scope="context" name="FILE_NAME"-->
-                    <!--source="spring.application.name" />-->
-    <!--<property name="BASE_HOME" value="./logs" />-->
-    <!--<property name="LOG_HOME" value="${BASE_HOME}/${FILE_NAME}" />-->
-    <!--<jmxConfigurator />-->
-    <!--&lt;!&ndash; 控制台输出 &ndash;&gt;-->
-    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
-        <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
-            <!--&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 &ndash;&gt;-->
-            <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern>-->
-        <!--</encoder>-->
-    <!--</appender>-->
-    <!--&lt;!&ndash; 按照每天生成日志文件 &ndash;&gt;-->
-    <!--<appender name="FILE"-->
-              <!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-        <!--&lt;!&ndash;<file>${BASE_HOME}/${FILE_NAME}.log</file> &ndash;&gt;-->
-        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-            <!--&lt;!&ndash;日志文件输出的文件名 &ndash;&gt;-->
-            <!--<FileNamePattern>${LOG_HOME}/${FILE_NAME}.%d{yyyy-MM-dd}.log-->
-            <!--</FileNamePattern>-->
-            <!--&lt;!&ndash;日志文件保留天数 &ndash;&gt;-->
-            <!--<MaxHistory>30</MaxHistory>-->
-        <!--</rollingPolicy>-->
-        <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
-            <!--&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 &ndash;&gt;-->
-            <!--<pattern>${FILE_LOG_PATTERN}</pattern>-->
-        <!--</encoder>-->
-        <!--&lt;!&ndash;日志文件最大的大小 &ndash;&gt;-->
-        <!--&lt;!&ndash;<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> &ndash;&gt;-->
-        <!--&lt;!&ndash;<MaxFileSize>10MB</MaxFileSize> &ndash;&gt;-->
-        <!--&lt;!&ndash;</triggeringPolicy> &ndash;&gt;-->
-    <!--</appender>-->
-    <!--&lt;!&ndash; show parameters for hibernate sql 专为 Hibernate 定制 &ndash;&gt;-->
-    <!--&lt;!&ndash;<logger name="org.hibernate.type.descriptor.sql.BasicBinder"&ndash;&gt;-->
-            <!--&lt;!&ndash;level="TRACE" />&ndash;&gt;-->
-    <!--&lt;!&ndash;<logger name="org.hibernate.type.descriptor.sql.BasicExtractor"&ndash;&gt;-->
-            <!--&lt;!&ndash;level="DEBUG" />&ndash;&gt;-->
-    <!--&lt;!&ndash;<logger name="org.hibernate.SQL" level="DEBUG" />&ndash;&gt;-->
-    <!--&lt;!&ndash;<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />&ndash;&gt;-->
-    <!--&lt;!&ndash;<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;myibatis log configure &ndash;&gt;-->
-    <!--<logger name="com.apache.ibatis" level="TRACE" />-->
-    <!--<logger name="java.sql.Connection" level="DEBUG" />-->
-    <!--<logger name="java.sql.Statement" level="DEBUG" />-->
-    <!--<logger name="java.sql.PreparedStatement" level="DEBUG" />-->
-
-    <!--<appender name="loghub"-->
-              <!--class="com.core.support.aliyun.log.LoghubAppender">-->
-        <!--<projectName>${aliyun.log.projectName}</projectName>-->
-        <!--<logstore>${aliyun.log.logstore}</logstore>-->
-        <!--<endpoint>${aliyun.log.endpoint}</endpoint>-->
-        <!--<accessKeyId>${aliyun.log.accessKeyId}</accessKeyId>-->
-        <!--<accessKey>${aliyun.log.accessKey}</accessKey>-->
-    <!--</appender>-->
-
-    <!--&lt;!&ndash; 日志输出级别 &ndash;&gt;-->
-    <!--<root level="LOG_LEVEL">-->
-        <!--<appender-ref ref="STDOUT" />-->
-        <!--<appender-ref ref="FILE" />-->
-        <!--<appender-ref ref="loghub" />-->
-    <!--</root>-->
-    <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt;-->
-    <!--&lt;!&ndash;<appender name="DB" class="ch.qos.logback.classic.db.DBAppender"> &ndash;&gt;-->
-    <!--&lt;!&ndash;&lt;!&ndash;日志异步到数据库 &ndash;&gt; &ndash;&gt;-->
-    <!--&lt;!&ndash;<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource"> &ndash;&gt;-->
-    <!--&lt;!&ndash;&lt;!&ndash;连接池 &ndash;&gt; &ndash;&gt;-->
-    <!--&lt;!&ndash;<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource"> &ndash;&gt;-->
-    <!--&lt;!&ndash;<driverClass>com.mysql.jdbc.Driver</driverClass> &ndash;&gt;-->
-    <!--&lt;!&ndash;<url>jdbc:mysql://127.0.0.1:3306/databaseName</url> &ndash;&gt;-->
-    <!--&lt;!&ndash;<user>root</user> &ndash;&gt;-->
-    <!--&lt;!&ndash;<password>root</password> &ndash;&gt;-->
-    <!--&lt;!&ndash;</dataSource> &ndash;&gt;-->
-    <!--&lt;!&ndash;</connectionSource> &ndash;&gt;-->
-    <!--&lt;!&ndash;</appender> &ndash;&gt;-->
+    <!--<include resource="core\logback\default.xml"/>-->
 <!--</configuration>-->
+
+<configuration debug="true">
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <springProperty scope="context" name="LOG_LEVEL" source="log.level.root" />
+    <springProperty scope="context" name="FILE_NAME"
+                    source="spring.application.name" />
+    <property name="BASE_HOME" value="./logs" />
+    <property name="LOG_HOME" value="${BASE_HOME}/${FILE_NAME}" />
+    <jmxConfigurator />
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<file>${BASE_HOME}/${FILE_NAME}.log</file> -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_HOME}/${FILE_NAME}.%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+            <!--日志文件保留天数 -->
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <!--日志文件最大的大小 -->
+        <!--<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> -->
+        <!--<MaxFileSize>10MB</MaxFileSize> -->
+        <!--</triggeringPolicy> -->
+    </appender>
+    <!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
+    <!--<logger name="org.hibernate.type.descriptor.sql.BasicBinder"-->
+            <!--level="TRACE" />-->
+    <!--<logger name="org.hibernate.type.descriptor.sql.BasicExtractor"-->
+            <!--level="DEBUG" />-->
+    <!--<logger name="org.hibernate.SQL" level="DEBUG" />-->
+    <!--<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />-->
+    <!--<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />-->
+
+    <!--myibatis log configure -->
+    <logger name="com.apache.ibatis" level="TRACE" />
+    <logger name="java.sql.Connection" level="DEBUG" />
+    <logger name="java.sql.Statement" level="DEBUG" />
+    <logger name="java.sql.PreparedStatement" level="DEBUG" />
+
+    <appender name="loghub"
+              class="com.core.support.aliyun.log.LoghubAppender">
+        <projectName>${aliyun.log.projectName}</projectName>
+        <logstore>${aliyun.log.logstore}</logstore>
+        <endpoint>${aliyun.log.endpoint}</endpoint>
+        <accessKeyId>${aliyun.log.accessKeyId}</accessKeyId>
+        <accessKey>${aliyun.log.accessKey}</accessKey>
+    </appender>
+
+    <!-- 日志输出级别 -->
+    <root level="LOG_LEVEL">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="loghub" />
+    </root>
+    <!--日志异步到数据库 -->
+    <!--<appender name="DB" class="ch.qos.logback.classic.db.DBAppender"> -->
+    <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt; -->
+    <!--<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource"> -->
+    <!--&lt;!&ndash;连接池 &ndash;&gt; -->
+    <!--<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource"> -->
+    <!--<driverClass>com.mysql.jdbc.Driver</driverClass> -->
+    <!--<url>jdbc:mysql://127.0.0.1:3306/databaseName</url> -->
+    <!--<user>root</user> -->
+    <!--<password>root</password> -->
+    <!--</dataSource> -->
+    <!--</connectionSource> -->
+    <!--</appender> -->
+</configuration>

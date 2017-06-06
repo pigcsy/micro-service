@@ -40,8 +40,6 @@ public class LoghubAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     public void start() {
         formatter = new SimpleDateFormat(timeFormat);
         formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
-        // producer = new LogProducer(config);
-        // producer.setProjectConfig(projectConfig);
         super.start();
     }
 

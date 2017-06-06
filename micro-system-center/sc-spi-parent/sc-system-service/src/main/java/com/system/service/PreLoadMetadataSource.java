@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.cache.support.redis.RedisCacheManager;
 import com.cache.support.vo.redis.key.RedisKeyTemplate;
 import com.cache.support.vo.redis.resource.MetaDataSource;
+import com.system.service.impl.OauthServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,7 @@ public class PreLoadMetadataSource {
     RedisCacheManager redisCacheManager;
 
     @Autowired
-    OauthService oauthService;
+    OauthServiceImpl oauthService;
 
     /**
      * TODO  初始加载数据

@@ -7,7 +7,7 @@ import com.system.domain.request.external.ExternalListRequestDto;
 import com.system.domain.request.external.ExternalRequestDto;
 import com.system.domain.response.external.ExternalListResponseDto;
 import com.system.domain.response.external.ExternalResult;
-import com.system.service.ExternalService;
+import com.system.service.impl.ExternalServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
@@ -25,7 +25,7 @@ public class ExternalController extends AbstractController {
     private static final long serialVersionUID = -1847490836635164716L;
 
     @Autowired
-    ExternalService externalService;
+    ExternalServiceImpl externalService;
 
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)

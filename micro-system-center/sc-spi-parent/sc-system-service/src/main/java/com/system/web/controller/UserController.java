@@ -7,7 +7,7 @@ import com.system.domain.request.user.UserListRequestDto;
 import com.system.domain.request.user.UserRequestDto;
 import com.system.domain.response.user.UserListResponseDto;
 import com.system.domain.response.user.UserResult;
-import com.system.service.UserService;
+import com.system.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
@@ -25,7 +25,7 @@ public class UserController extends AbstractController {
     private static final long serialVersionUID = -1847490836635164716L;
 
     @Autowired
-    UserService userService;
+    UserServiceImpl userService;
 
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)

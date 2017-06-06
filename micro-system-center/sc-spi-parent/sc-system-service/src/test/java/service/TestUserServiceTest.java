@@ -1,8 +1,8 @@
 package service;
 
-import com.system.service.OauthService;
+import com.system.service.impl.OauthServiceImpl;
 import com.system.service.PreLoadMetadataSource;
-import com.system.service.UserService;
+import com.system.service.impl.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +40,9 @@ import sample.SampleJUnitTest;
 public class TestUserServiceTest extends SampleJUnitTest {
     private static Logger logger = LoggerFactory.getLogger(TestUserServiceTest.class);
     @Autowired
-    private OauthService oauthService;
+    private OauthServiceImpl oauthService;
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
     @Autowired
     private PreLoadMetadataSource preLoadMetadataSource;
 
