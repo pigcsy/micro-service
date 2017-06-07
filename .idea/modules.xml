@@ -23,7 +23,6 @@
       <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-system-gateway/sc-system-gateway.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-system-gateway/sc-system-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-system-service/sc-system-service.iml" filepath="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-system-service/sc-system-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/micro-tools-parent/storm-support/storm-support.iml" filepath="$PROJECT_DIR$/micro-tools-parent/storm-support/storm-support.iml" />
-      <module fileurl="file://$PROJECT_DIR$/micro-common-parent/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/micro-common-parent/zipkin-server/zipkin-server.iml" />
     </modules>
   </component>
 </project>

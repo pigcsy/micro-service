@@ -13,6 +13,5 @@
         <module>registry-server</module>
         <module>config-server</module>
         <module>monitor-server</module>
-        <module>zipkin-server</module>
     </modules>
 </project>

@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <name>config-server</name>
-    <description>Config Server demo project</description>
+    <description>Config Server project</description>
     <!--<properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.cms.configserver.bootstarp.WebApplication</start-class>
         <java.version>1.8</java.version> <docker.image.prefix>springcloud</docker.image.prefix>

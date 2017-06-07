@@ -22,7 +22,6 @@
         <module name="sc-system-gateway" />
         <module name="sc-system-service" />
         <module name="storm-support" />
-        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -10,6 +10,7 @@
       <set>
         <option value="$PROJECT_DIR$/cmy-data-platform/pom.xml" />
         <option value="$PROJECT_DIR$/cmy-service-platform/pom.xml" />
+        <option value="$PROJECT_DIR$/micro-common-parent/zipkin-server/pom.xml" />
         <option value="$PROJECT_DIR$/micro-system-center/sc-api-parent/sc-safty-api/pom.xml" />
         <option value="$PROJECT_DIR$/micro-system-center/sc-spi-parent/sc-safty-service/pom.xml" />
       </set>

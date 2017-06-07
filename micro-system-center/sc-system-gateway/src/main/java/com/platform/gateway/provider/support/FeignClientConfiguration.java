@@ -14,4 +14,5 @@ public class FeignClientConfiguration extends DefaultFeignClientConfiguration {
     public AccessClientFallbackFactory accessClientFallbackFactory() {
         return new AccessClientFallbackFactory();
     }
+
 }
