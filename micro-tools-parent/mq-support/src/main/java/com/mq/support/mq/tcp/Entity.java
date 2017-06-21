@@ -1,4 +1,5 @@
-package com.mq.support.mq.tcp;/**
+package com.mq.support.mq.tcp;
+/**
  * Created by maven on 2017/3/2.
  */
 
